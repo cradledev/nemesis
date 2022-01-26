@@ -1,0 +1,45 @@
+.mainComment {
+  padding: 5px 10px;
+}
+
+.mainComment .userAvatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: 1em;
+}
+
+.mainComment ion-label img,
+.mainComment ion-label video {
+  height: 120px;
+  width: 95%;
+  margin-top: 7px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+
+.mainComment ion-button {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.mainComment ion-button img {
+  margin-right: 5px;
+}
+
+ion-footer ion-item {
+  border-radius: 30px !important;
+  border: 1px solid #f1f1f1 !important;
+}
+
+ion-footer ion-item .slotedStart {
+  margin-right: 10px !important;
+}
+
+ion-footer ion-item .slotedEnd {
+  margin-left: 10px !important;
+}
+/*# sourceMappingURL=comments-reply.page.css.map */

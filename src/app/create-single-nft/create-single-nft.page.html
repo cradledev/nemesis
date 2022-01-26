@@ -1,0 +1,200 @@
+<ion-header class="gradientHeader">
+    <ion-toolbar mode="ios">
+        <ion-buttons slot="start">
+            <ion-back-button mode="md"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Create Single</ion-title>
+    </ion-toolbar>
+    <div class="wallet-info">
+        <ion-input type="text" (click)="walletmodal=true" readonly class="wallet-address" *ngIf="hideaddress" f value="0x231344.....2423"></ion-input>
+        <ion-button color="primary" expand="block" class="createBtn" *ngIf="createwallet" (click)="createwalletmodal=true">Create Wallet</ion-button>
+    </div>
+
+</ion-header>
+
+<ion-content>
+    <ion-row class="ion-justify-content-center">
+
+        <ion-col size="11" class="ion-no-padding">
+            <h3 class="bold">Create single collectible</h3>
+            <p class="bold mt-2">Upload File</p>
+            <div class="filePickerCont" (click)="pictureClick()">
+                <div class="txt">
+                    <p class="fileDesp">PNG, GIF, WEBP, MP4 or MP3. Max 30mb.</p>
+                    <ion-button shape="round" color="primary" class="createBtn">Choose File</ion-button>
+                </div>
+            </div>
+            <ion-item lines="none" class="toggleCont ion-no-padding">
+                <ion-label class="ion-text-wrap">
+                    <p>Put on sale</p>
+                    <p class="gray">You’ll receive bids on this item</p>
+                </ion-label>
+                <ion-toggle mode="ios" slot="end" [(ngModel)]="put_sale_toggle"></ion-toggle>
+            </ion-item>
+            <ion-label position="stacked" *ngIf="put_toggle_error" style="color: red;">This filed is required. Please select toggle button</ion-label>
+            <ion-item lines="none" class="toggleCont ion-no-padding">
+                <ion-label class="ion-text-wrap">
+                    <p>Put on marketplace</p>
+                    <p class="gray">Enter price to allow users instantly purchase your NFT</p>
+                </ion-label>
+                <ion-toggle mode="ios" slot="end" (ionChange)="update_instant($event)"></ion-toggle>
+            </ion-item>
+            <ion-row *ngIf="instant_sale">
+                <!-- <ion-label class="gray">Enter the price for which the item will be instantly sold</ion-label> -->
+                <ion-col size="6" class="pl-0">
+                    <div class="filePickerCont colPicker" (click)="toggle_fixed()">
+                        <div class="txt">
+                            <ion-img class="img-tag" src="/assets/imgs/fixed_price.svg"></ion-img>
+                            <p class="my-0 bold">Fixed<br>Price</p>
+                        </div>
+                    </div>
+                </ion-col>
+                <ion-col size="6" class="pl-0">
+                    <div class="filePickerCont colPicker" (click)="toggle_auction()">
+                        <div class="txt">
+                            <ion-img class="img-tag" src="/assets/imgs/timed_aution.svg"></ion-img>
+                            <p class="my-0 bold">Timed<br>auction</p>
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <div class="fixed_price_rect" *ngIf="fixed_price">
+                <ion-label class="bold my-0 dark">Price</ion-label>
+                <ion-item>
+                    <ion-input placeholder="Enter price for one piece"></ion-input>
+                    <ion-label class="gray">&nbsp;ETH</ion-label>
+                    <!-- <ion-select>
+                        <ion-select-option value = "ETH">ETH</ion-select-option>
+                        <ion-select-option value = "DAI">DAI</ion-select-option>
+                    </ion-select> -->
+                </ion-item>
+                <ion-label class="gray">Service fee <span class="bold my-0 dark">2.5%</span></ion-label>
+            </div>
+            <div class="timed_auction_rect" *ngIf="timed_auction">
+                <ion-label class="bold my-0 dark">Minimum bid</ion-label>
+                <ion-item>
+                    <ion-input placeholder="Enter minimum bid"></ion-input>
+                    <!-- <ion-select>
+                        <ion-select-option value = "ETH">ETH</ion-select-option>
+                        <ion-select-option value = "DAI">DAI</ion-select-option>
+                    </ion-select> -->
+                    <ion-label class="gray">&nbsp;ETH</ion-label>
+                </ion-item>
+                <ion-label class="gray">Bids below this amount won't be allowed</ion-label>
+            </div>
+            <!-- <ion-item lines="none" class="toggleCont ion-no-padding">
+                <ion-label class="ion-text-wrap">
+                    <p>Unlock once purchased</p>
+                    <p class="gray">Content will be unlocked after successful transaction</p>
+                </ion-label>
+                <ion-toggle mode="ios" slot="end"></ion-toggle>
+            </ion-item> -->
+            <!-- <p class="bold mt-2">Choose collection</p>
+            <ion-row>
+                <ion-col size="6" class="pl-0">
+                    <div class="filePickerCont colPicker">
+                        <div class="txt">
+                            <ion-icon name="add"></ion-icon>
+                            <p class="my-0 bold">Create</p>
+                            <p class="desp gray">ERC-721</p>
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row> -->
+            <p class="inputTitle">Name</p>
+            <ion-item lines="none" class="inputCont">
+                <ion-input [(ngModel)]="name" type="text" placeholder="e.g Majed T-Shirt"></ion-input>
+            </ion-item>
+            <ion-label position="stacked" *ngIf="name_error" style="color: red;">This filed is required. Please fill Name field</ion-label>
+            <p class="inputTitle">Description <span class="appTxt gray">(Optional)</span></p>
+            <ion-item lines="none" class="inputCont">
+                <ion-input type="text" [(ngModel)]="description" placeholder="e.g Majed T-Shirt"></ion-input>
+            </ion-item>
+            <ion-label position="stacked" *ngIf="description_error" style="color: red;">This filed is required. Please fill Description field</ion-label>
+            <p class="gray inputDesp">With preserved line-breaks</p>
+            <p class="inputTitle">Royalties</p>
+            <ion-item lines="none" class="inputCont">
+                <ion-input type="number" [(ngModel)]="royalties" placeholder="10"></ion-input>
+                <p class="unit" slot="end">%</p>
+            </ion-item>
+            <ion-label position="stacked" *ngIf="royalties_error" style="color: red;">This filed is required. Please fill Royalties field</ion-label>
+            <p class="gray inputDesp">Suggested: 10%, 20%, 30%</p>
+            <!-- <p class="inputTitle">Properties <span class="appTxt gray">(Optional)</span></p>
+            <ion-item lines="none" class="inputCont">
+                <ion-input type="text" placeholder="e.g Size"></ion-input>
+            </ion-item> -->
+        </ion-col>
+    </ion-row>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-row class="ion-justify-content-center">
+            <ion-col size="11" class="ion-no-padding">
+                <ion-button color="primary" expand="block" class="submitBtn" (click)="creat_collectible()">Create Collectible</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-toolbar>
+</ion-footer>
+
+<div *ngIf="walletmodal" class="popupModal">
+    <div class="innerDiv">
+        <div class="heading">
+            <h3 class="bold my-0 dark">Your Wallet</h3>
+            <ion-icon (click)="walletmodal=false" name="close"></ion-icon>
+        </div>
+        <div class="checkBoxCont">
+            <div class="details">
+                <h5 class="bold my-0 dark">Wallet Info</h5>
+                <hr>
+                <ion-input class="wallet_address" value="0x234233k34j3o3l34323l2323" readonly></ion-input>
+                <ion-item>
+                    <ion-label>ETH Balance:</ion-label>
+                    <ion-input value="0.5" style="text-align: right;" readonly></ion-input>
+                    <ion-label>&nbsp;ETH</ion-label>
+                </ion-item>
+                <!-- <p class="bold my-0 dark">ETH Balance: <span style="margin-left: 9em;">0.5 ETH</span></p> -->
+            </div>
+        </div>
+        <div class="checkBoxCont">
+            <div class="details">
+                <h5 class="bold my-0 dark">Send Funds</h5>
+                <hr>
+                <ion-input class="wallet_address" placeholder="Receiver address"></ion-input>
+                <ion-item>
+                    <ion-label>ETH Balance:</ion-label>
+                    <ion-input value="0" style="text-align: right;"></ion-input>
+                    <ion-label>&nbsp;ETH</ion-label>
+                </ion-item>
+                <!-- <p class="bold my-0 dark">ETH Balance: <ion-input class="fund_amount" value = "0.1 ETH"></ion-input></p> -->
+            </div>
+        </div>
+        <div class="ButtonGroup">
+            <ion-button color="primary" expand="block" class="uploadBtn send_funds">Send</ion-button>
+            <ion-button color="primary" expand="block" class="uploadBtn" (click)="walletmodal=false">Close</ion-button>
+        </div>
+    </div>
+</div>
+<div *ngIf="createwalletmodal" class="popupModal">
+    <div class="innerDiv">
+        <div class="heading">
+            <h3 class="bold my-0 dark">Your Wallet</h3>
+            <ion-icon (click)="closewalletModal()" name="close"></ion-icon>
+        </div>
+        <div class="checkBoxCont">
+            <div class="details">
+                <p class="bold my-0 dark">Wallet Address</p>
+                <hr>
+                <ion-input class="wallet_address" value="0x234233k34j3o3l34323l2323" readonly></ion-input>
+                <ion-item>
+                    <ion-label>ETH Balance:</ion-label>
+                    <ion-input value="0" style="text-align: right;"></ion-input>
+                    <ion-label>&nbsp;ETH</ion-label>
+                </ion-item>
+            </div>
+        </div>
+        <div>
+            <ion-button color="primary" expand="block" class="closebutton" (click)="closewalletModal()">Close</ion-button>
+        </div>
+    </div>
+</div>

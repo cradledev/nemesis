@@ -1,0 +1,84 @@
+<ion-header class="gradientHeader">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>comments</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullScreen="true" color="lighter">
+
+    <ion-row class="mainComment">
+        <ion-col size="2" class="ion-text-center">
+            <img class="userAvatar" [src]="service.usersData[comment.uid]?.profileUrl">
+        </ion-col>
+        <ion-col size="10">
+            <ion-item lines="none" class="ion-no-padding">
+                <ion-label class="ion-text-wrap">
+                    <h2 class="dark fw500">{{service.usersData[comment.uid].fullName}} <small class="gray">&nbsp; {{comment.commentTimestamp}}</small></h2>
+                    <p class="gray" *ngIf="comment.comment">{{comment.comment}}</p>
+                    <img *ngIf="comment.commentsImages" [src]="comment.commentsImages">
+                    <video controls class="w-100" *ngIf="comment.commentsVideos" (playing)="onPlayingVideo($event)" #player playsinline preload="auto" [poster]="comment.commentsVideos" height="240" style="object-fit: cover !important;">
+                        <source [src]="comment.commentsVideos" type="video/mp4">
+                    </video>
+                </ion-label>
+            </ion-item>
+            <ion-button style="margin-left: -10px;" fill="clear" color="medium" size="small" class="ion-margin-right">
+                <img src="./assets/imgs/like.png"> 26
+            </ion-button>
+            <ion-button fill="clear" color="medium" size="small" class="ion-margin-right">
+                <img src="./assets/imgs/dislike.png"> 11
+            </ion-button>
+            <ion-button fill="clear" color="medium" size="small" class="ion-margin-right">
+                REPLY
+            </ion-button>
+            <p *ngIf="comment.replies" (click)="comment.showReplies=!comment.showReplies" class="appTxt dark bold mb-0">
+                <span *ngIf="!comment.showReplies">- View {{comment.replies.length}} replies</span>
+                <span *ngIf="comment.showReplies">- Hide {{comment.replies.length}} replies</span>
+            </p>
+            <div *ngIf="comment.showReplies">
+                <div *ngFor="let reply of comment.replies" class="mainComment">
+                    <ion-item lines="none" class="ion-no-padding">
+                        <ion-label class="ion-text-wrap">
+                            <h2 class="dark fw500">{{service.usersData[reply.uid].fullName}} <small class="gray">&nbsp; {{reply.commentTimestamp}}</small></h2>
+                            <p class="gray" *ngIf="reply.comment">{{reply.comment}}</p>
+                            <img *ngIf="reply.commentsImages" [src]="reply.commentsImages">
+                            <video controls class="w-100" *ngIf="reply.commentsVideos" (playing)="onPlayingVideo($event)" #player playsinline preload="auto" [poster]="comment.commentsVideos" height="240" style="object-fit: cover !important;">
+                                <source [src]="reply.commentsVideos" type="video/mp4">
+                            </video>
+                        </ion-label>
+                    </ion-item>
+                    <ion-button style="margin-left: -10px;" fill="clear" color="medium" size="small" class="ion-margin-right">
+                        <img src="./assets/imgs/like.png"> 26
+                    </ion-button>
+                    <ion-button fill="clear" color="medium" size="small" class="ion-margin-right">
+                        <img src="./assets/imgs/dislike.png"> 11
+                    </ion-button>
+                    <ion-button fill="clear" color="medium" size="small" class="ion-margin-right">
+                        REPLY
+                    </ion-button>
+                </div>
+            </div>
+        </ion-col>
+    </ion-row>
+
+</ion-content>
+
+
+<ion-footer>
+    <input id="galleryMedia" style="display: none;" type="file" accept="image/jpeg, image/png, video/mp4" (change)="onChangeFileGallery($event)">
+    <ion-row class="bg-white" style="padding: 10px;">
+        <ion-col size="2" class="ion-text-center">
+            <img src="./assets/imgs/Video.png" (click)="toGalleryMedia()">
+        </ion-col>
+        <ion-col size="10">
+            <ion-item lines="none">
+                <ion-input type="text" [(ngModel)]="text" (keyup.enter)="sendComment()" placeholder="Write a comment...">
+                </ion-input>
+                <img class="slotedEnd" src="/assets/imgs/GIF.png" slot="end">
+                <img class="slotedEnd" src="/assets/imgs/smile 1.png" slot="end">
+            </ion-item>
+        </ion-col>
+    </ion-row>
+</ion-footer>

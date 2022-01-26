@@ -1,0 +1,32 @@
+.nftOwnerCont {
+    display: flex;
+    align-items: center;
+    padding: 18px 0px;
+    border-bottom: 1px solid #DFDFDF;
+
+    .userImg {
+        height: 45px;
+        width: 45px;
+        min-width: 45px;
+        margin-right: 15px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .txtCont {
+        .userRole {
+            font-size: 14px;
+            color: var(--ion-color-medium);
+            margin: 0px 0px 6px 0px;
+        }
+    }
+}
+.nftOwnerCont:first-child
+{
+    padding-top: 5px;
+}
+.nftOwnerCont:last-child
+{
+    padding-bottom: 0px !important;
+    border-bottom: 0px !important;
+}

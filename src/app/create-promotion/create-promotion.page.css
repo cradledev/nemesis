@@ -1,0 +1,72 @@
+.createPostSheet {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.createPostSheet .innerContent {
+  border-radius: 16px 16px 0 0;
+  position: absolute;
+  width: 100%;
+  border: 1px solid var(--ion-color-primary);
+  bottom: 0;
+}
+
+.createPostSheet .innerContent .closeBar {
+  border-radius: 10px;
+  background: #e4e4e7;
+  border-radius: 10px;
+  color: #e4e4e7;
+  padding: 0 20px;
+  font-size: 4px;
+}
+
+.createPostSheet .innerContent ion-item img {
+  margin-right: 12px;
+}
+
+.imgPost {
+  width: 75px !important;
+  height: 75px !important;
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
+}
+
+.crossIcon {
+  position: absolute;
+  z-index: 9999;
+  top: 15px;
+  right: 6px;
+  color: red;
+}
+
+.comments {
+  border-radius: 30px !important;
+  border: 2px solid #f1f1f1 !important;
+}
+
+.comments .slotedStart {
+  margin-right: 10px !important;
+}
+
+.comments .slotedEnd {
+  margin-left: 10px !important;
+}
+
+ion-avatar {
+  padding: 2px;
+  margin-right: 6px;
+  border: 1px solid var(--ion-color-primary);
+}
+
+.postImage {
+  width: 50px !important;
+  height: 50px !important;
+  -o-object-fit: cover !important;
+     object-fit: cover !important;
+  border-radius: 50%;
+}
+/*# sourceMappingURL=create-promotion.page.css.map */

@@ -1,0 +1,153 @@
+<ion-header class="gradientHeader">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Hot or Not</ion-title>
+        <ion-buttons slot="end">
+            <ion-button routerLink="/advance-search">
+                <ion-icon name="search" slot="icon-only"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullScreen="true">
+
+    <ion-segment [(ngModel)]="activeTab">
+        <ion-segment-button value="charts">Charts</ion-segment-button>
+        <ion-segment-button value="genre">Genre</ion-segment-button>
+        <ion-segment-button value="featured">Featured</ion-segment-button>
+        <ion-segment-button value="playlist">Playlist</ion-segment-button>
+    </ion-segment>
+
+
+    <div class="ion-padding" [(ngSwitch)]="activeTab">
+        <div *ngSwitchCase="'charts'">
+            <h5 class="bold">1-4 Nemesis</h5>
+            <ion-row class="musicList">
+                <ion-col *ngFor="let music of allMusics | slice:0:4;index as i" size="6" (click)="show(music)">
+                    <div class="chartItem bg-white rounded lightshadow">
+                        <img [src]="music.poster">
+                        <span>{{i+1}}</span>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <h5 class="bold">5-100 Nemesis</h5>
+            <div *ngFor="let music of allMusics; index as i">
+                <ion-item *ngIf="i>=4" class="listItems ion-no-padding bg-none" (click)="show(music)">
+                    <ion-avatar slot="start">
+                        <img src="./assets/imgs/music 3.png">
+                        <!-- <img [src]="music.poster"> -->
+                    </ion-avatar>
+                    <ion-label>
+                        <h5>{{i+1}} {{music.musicName}}</h5>
+                        <p>{{music.musicArtist}}</p>
+                    </ion-label>
+                </ion-item>
+            </div>
+
+        </div>
+
+
+        <div *ngSwitchCase="'genre'">
+            <ion-row class="musicList">
+                <ion-col *ngFor="let music of musicList" size="6">
+                    <div class="anItem bg-white rounded lightshadow">
+                        <img [src]="music">
+                        <ion-item class="rounded" lines="none">
+                            <ion-label class="mt-0">
+                                <h5>Song</h5>
+                                <p>Las Vegas</p>
+                            </ion-label>
+                            <ion-icon class="mt-0" size="small" color="medium" name="ellipsis-vertical" slot="end">
+                            </ion-icon>
+                        </ion-item>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </div>
+
+
+        <div *ngSwitchCase="'featured'">
+            <div class="ion-text-center">
+                <img src="./assets/imgs/music1.png">
+                <p class="dark bold">The Project Delinium</p>
+                <p class="mt-0"><small>
+                        Details is the sole studio album by the musical group Frou Frou.
+                        State and in the movie The Project delirium
+                    </small></p>
+            </div>
+            <h5 class="bold">Songs</h5>
+            <ion-row class="musicList">
+                <ion-col *ngFor="let music of musicList" size="6">
+                    <div class="anItem bg-white rounded lightshadow">
+                        <img [src]="music">
+                        <ion-item class="rounded" lines="none">
+                            <ion-label class="mt-0">
+                                <h5>Song</h5>
+                                <p>Las Vegas</p>
+                            </ion-label>
+                            <ion-icon class="mt-0" size="small" color="medium" name="ellipsis-vertical" slot="end">
+                            </ion-icon>
+                        </ion-item>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </div>
+
+
+        <div *ngSwitchCase="'playlist'">
+            <ion-item lines="none" class="newList rounded mb-1 lightshadow">
+                <ion-avatar slot="start">
+                    <img src="./assets/imgs/invite.png">
+                </ion-avatar>
+                <ion-label>Create new playlist</ion-label>
+            </ion-item>
+            <ion-item *ngFor="let list of playList" lines="none" class="playList rounded lightshadow mb-1">
+                <ion-avatar slot="start">
+                    <img [src]="list.img">
+                </ion-avatar>
+                <ion-label>
+                    <h5>{{list.title}}</h5>
+                    <p>119 Songs</p>
+                </ion-label>
+                <ion-icon slot="end" name="ellipsis-vertical" size="small"></ion-icon>
+            </ion-item>
+        </div>
+    </div>
+
+</ion-content>
+
+<ion-footer *ngIf="showFooter">
+    <ion-row>
+        <ion-col routerLink="/music-player" size="3">
+            <img class="rounded" [src]="this.service.currentMusic.poster">
+        </ion-col>
+        <ion-col size="9">
+            <ion-range min="0" max="{{duration}}" [(ngModel)]="position"></ion-range>
+            <p class="rangebarTime white">
+                <small><span class="ion-float-right" *ngIf="duration != -1">{{ duration*1000 | date:'mm:ss' }}</span></small>
+                <small><span class="ion-float-right" *ngIf="duration == -1">--:--</span></small>
+
+            </p>
+            <ion-item class="ion-no-padding bg-none mt-0" lines="none">
+                <ion-label routerLink="/music-player">
+                    <h5 class="white">{{this.service.currentMusic.musicName}}</h5>
+                    <p class="white">{{this.service.currentMusic.musicArtist}}</p>
+                </ion-label>
+
+                <p slot="end">
+                    <!-- <audio #player>
+                        <source [src]="service.currentMusic.musicUrl"  type="audio/mpeg">
+                    </audio> -->
+                    <ion-icon name="play-skip-back-circle-outline" [disabled]="!is_ready || !is_in_play" (click)="controlSeconds('back')"></ion-icon>
+                    <ion-icon class="playIcon" (click)="pausePlayRecording()" *ngIf="is_playing" [disabled]="!is_ready" name="pause-circle"></ion-icon>
+                    <ion-icon class="playIcon" (click)="playRecording()" color="primary" *ngIf="!is_playing" [disabled]="!is_ready" name="play-circle-outline"></ion-icon>
+                    <ion-icon name="play-skip-forward-circle-outline" [disabled]="!is_ready || !is_in_play" (click)="controlSeconds('forward')"></ion-icon>
+
+                </p>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+</ion-footer>

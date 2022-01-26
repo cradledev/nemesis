@@ -1,0 +1,85 @@
+ion-header {
+    ion-toolbar {
+        --min-height: 65px;
+        --border-width: 0px;
+        ion-title {
+            font-size: 21px;
+            font-weight: normal;
+        }
+    }
+}
+ion-content {
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+    
+    .innerDiv {
+        width: 95%;
+        height: auto;
+        min-height: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5em;
+        .heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0px 0px 0px;
+            h3{
+                margin-left: auto;
+                margin-right: auto;
+            }
+            ion-icon {
+                color: var(--ion-color-medium);
+                font-size: 28px;
+            }
+        }
+        .checkBoxCont {
+            display: flex;
+            align-items: center;
+            margin-top: 3em;
+            .checkbox {
+                height: 45px;
+                width: 45px;
+                min-width: 45px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                background: #8d8d8d77;
+                img {
+                    height: 35px;
+                }
+                &.checked {
+                    background: var(--ion-color-primary);
+                }
+            }
+            .details {
+                padding-left: 18px;
+                p {
+                    color: var(--ion-color-medium);
+                    font-size: 14px;
+                    margin: 7px 0px 0px 0px;
+                }
+            }
+        }
+        .uploadBtn {
+            height: 55px;
+            border-radius: 10px;
+            --border-radius: 10px;
+            margin: 20px 0px 0px 0px;
+            --box-shadow: none !important;
+            letter-spacing: normal !important;
+            font-size: 17px;
+            &.disabled {
+                --ion-color-base: #8d8d8d77 !important;
+                --ion-color-shade: #8d8d8d77 !important;
+            }
+        }
+    }
+}
+
+ion-footer{
+    // background-color: red;
+    height: 5em;
+}

@@ -1,0 +1,286 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+
+/* Core CSS required for Ionic components to work properly */
+
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+$customColors: ("lighter");
+@each $color in $customColors {
+    .ion-color-#{$color} {
+        --ion-color-base: var(--ion-color-#{$color}) !important;
+        --ion-color-base-rgb: var(--ion-color-#{$color}-rgb) !important;
+        --ion-color-contrast: var(--ion-color-#{$color}-contrast) !important;
+        --ion-color-contrast-rgb: var(--ion-color-#{$color}-contrast-rgb) !important;
+        --ion-color-shade: var(--ion-color-#{$color}-shade) !important;
+        --ion-color-tint: var(--ion-color-#{$color}-tint) !important;
+    }
+}
+
+.mb-0 {
+    margin-bottom: 0em !important;
+}
+
+.mb-1 {
+    margin-bottom: 1em !important;
+}
+
+.mb-2 {
+    margin-bottom: 2em !important;
+}
+
+.mb-3 {
+    margin-bottom: 3em !important;
+}
+
+.mb-4 {
+    margin-bottom: 4em !important;
+}
+
+.mb-5 {
+    margin-bottom: 5em !important;
+}
+
+.mb-6 {
+    margin-bottom: 6em !important;
+}
+
+.mt-0 {
+    margin-top: 0px !important;
+}
+.my-0
+{
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+.mt-1 {
+    margin-top: 1em !important;
+}
+
+.mt-2 {
+    margin-top: 2em !important;
+}
+
+.mt-3 {
+    margin-top: 3em !important;
+}
+
+.mt-4 {
+    margin-top: 4em !important;
+}
+
+.mt-5 {
+    margin-top: 5em !important;
+}
+
+.mt-6 {
+    margin-top: 6em !important;
+}
+
+.pb-0 {
+    padding-bottom: 0px !important;
+}
+
+.pt-0 {
+    padding-top: 0px !important;
+}
+
+.pr-0 {
+    padding-right: 0px !important;
+}
+
+.pl-0 {
+    padding-left: 0px !important;
+}
+.pl-1
+{
+    padding-left: 8px !important;
+}
+.pr-1
+{
+    padding-right: 8px !important;
+}
+.h-50 {
+    height: 50px !important;
+}
+
+.bold {
+    font-weight: bold !important;
+}
+
+.fw500 {
+    font-weight: 500 !important;
+}
+
+.bg-none {
+    background: transparent !important;
+    --background: transparent !important;
+}
+
+ion-button {
+    text-transform: none !important;
+}
+
+.rounded {
+    --border-radius: 10px !important;
+    border-radius: 10px !important;
+}
+
+.no-rounded {
+    border-radius: 0px !important;
+    --border-radius: 0px !important;
+}
+
+.boxshadow {
+    box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.lightshadow {
+    box-shadow: 0px 4px 54px rgba(0, 0, 0, 0.03);
+}
+
+.popupModal {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 50% 7%;
+    z-index: 999999;
+    background: rgba(0, 0, 0, 0.5);
+    .innerDiv {
+        background-color: #ffffff;
+        padding: 16px;
+        border-radius: 8px;
+        position: relative;
+    }
+}
+
+.appTxt {
+    font-size: 13px !important;
+}
+
+.borderTop {
+    border-top: 1px solid var(--ion-color-medium);
+}
+
+.borderBottom {
+    border-bottom: 1px solid var(--ion-color-medium);
+}
+
+ion-content {
+    .loginInputs {
+        border: 1px solid #ffffff !important;
+        margin-top: 7px;
+    }
+    .newsFeedPost {
+        box-shadow: 0px 4px 54px rgba(0, 0, 0, 0.05);
+        hr {
+            width: 90%;
+            border-top: 1px solid #e9e9e9;
+        }
+        .socialBtns {
+            ion-col {
+                padding: 0;
+            }
+            ion-button {
+                height: 60px;
+                font-size: 12px;
+                --ripple-color: transparent;
+            }
+            .imgContainer {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: #f1f1f1;
+                margin-right: 8px;
+                img {
+                    margin-top: 12px;
+                    margin-left: 10px;
+                }
+            }
+            .activeBtn {
+                .imgContainer {
+                    background: linear-gradient(92.89deg, #ff714d -9.4%, #ff4244 111.54%) !important;
+                    img {
+                        filter: brightness(2);
+                    }
+                }
+                .actionColor {
+                    color: #ff714d !important;
+                }
+            }
+            .activeBtnComments {
+                color: linear-gradient(92.89deg, #ff714d -9.4%, #ff4244 111.54%) !important;
+            }
+        }
+    }
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+ion-header {
+    ion-slides {
+        --bullet-background-active: #ffffff !important;
+    }
+}
+
+.errorMsg {
+    font-size: 12px;
+    color: red;
+    margin-top: 5px;
+}
+
+.emoji-picker {
+    [_nghost-fpm-c141] {
+        position: fixed !important;
+        bottom: 0px !important;
+    }
+}
+
+.popupModal {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 50% 7%;
+    z-index: 999999;
+    background: rgba(0, 0, 0, 0.5);
+    .innerDiv {
+        background-color: #ffffff;
+        padding: 16px;
+        height: 530px;
+        overflow: scroll;
+        border-radius: 8px;
+        position: relative;
+    }
+}
+
+div:focus
+{
+    outline: none !important;
+}

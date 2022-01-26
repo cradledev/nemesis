@@ -1,0 +1,29 @@
+ion-tab-bar {
+  -webkit-box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+}
+
+ion-tab-bar ion-tab-button {
+  background: transparent !important;
+}
+
+ion-tab-bar ion-tab-button img {
+  opacity: 0.6;
+}
+
+ion-tab-bar ion-tab-button.middleTab img {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 50%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 50px;
+  height: 50px;
+  opacity: 1;
+}
+
+ion-tab-bar .tab-selected img {
+  opacity: 1;
+}
+/*# sourceMappingURL=tabs.page.css.map */

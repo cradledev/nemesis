@@ -1,0 +1,98 @@
+<ion-header class="gradientHeader boxshadow">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>player</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <img src="./assets/imgs/music 2.png">
+      </ion-button>
+      <ion-button>
+        <ion-icon name="ellipsis-vertical-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullScreen="true">
+
+  <ion-grid class="ion-padding">
+    <ion-slides class="mt-2" pager="false">
+      <ion-slide *ngFor="let music of musicList">
+        <ion-row class="w-100">
+          <ion-col size="12">
+            <img class="rounded w-100" [src]="music">
+            <p class="white ion-text-center mb-0">Mabe Music</p>
+            <p class="white ion-text-center mt-0">
+              <small>Marron5 feat. martin garix</small>
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+    </ion-slides>
+  </ion-grid>
+
+  <img class="absoluteImg w-100" src="./assets/imgs/Frame.png">
+
+</ion-content>
+
+<ion-footer>
+  <ion-row class="socialBtns">
+    <ion-col size="4">
+      <ion-button expand="block" class="ion-no-padding ion-no-margin white activeTab" fill="clear">
+        <div class="imgContainer">
+          <img src="./assets/imgs/like.png">
+        </div> 2000
+      </ion-button>
+    </ion-col>
+    <ion-col size="4">
+      <ion-button expand="block" class="ion-no-padding ion-no-margin white inactiveTab" fill="clear">
+        <div class="imgContainer">
+          <img src="./assets/imgs/dislike.png">
+        </div> 124
+      </ion-button>
+    </ion-col>
+    <ion-col size="4">
+      <ion-button expand="block" class="ion-no-padding ion-no-margin white inactiveTab" fill="clear">
+        <div class="imgContainer">
+          <img src="./assets/imgs/comment.png">
+        </div> 1,197
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <div class="musicPlayer">
+
+    <ion-item lines="none" class="bg-none">
+      <ion-range min="0" max="5"></ion-range>
+    </ion-item>
+    <p class="rangebarTime white">
+      <small> 1:04 <span class="ion-float-right">3:45</span></small>
+    </p>
+
+    <ion-row class="playerBtns">
+      <ion-col size="1"></ion-col>
+
+      <ion-col size="2">
+        <img class="leftMost" src="./assets/imgs/Vector.png">
+      </ion-col>
+      <ion-col size="2">
+        <img class="controllers" src="./assets/imgs/back.png">
+      </ion-col>
+      <ion-col size="2">
+        <img class="playBtn" src="./assets/imgs/play.png">
+      </ion-col>
+      <ion-col size="2">
+        <img class="controllers" src="./assets/imgs/forward.png">
+      </ion-col>
+      <ion-col size="2">
+        <img class="rightMost" src="./assets/imgs/swap.png">
+      </ion-col>
+
+      <ion-col size="1"></ion-col>
+    </ion-row>
+
+  </div>
+
+</ion-footer>

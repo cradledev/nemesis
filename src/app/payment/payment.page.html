@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>payment</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <h5 class="heading mt-1 mb-1">BILLING DETAILS</h5>
+    <p>We are fully compliant with Payment Card Industry Data Security Standards.</p>
+    <ion-item lines="none" class="bg-simple rounded mb-1">
+        <ion-input [(ngModel)]="street" class="dark" type="text" placeholder="Street"></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="bg-simple rounded mb-1">
+        <ion-input [(ngModel)]="state" class="dark" type="text" placeholder="State/Provice"></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="bg-simple rounded mb-1">
+        <ion-input [(ngModel)]="zip" class="dark" type="text" placeholder="Zip/PostalCode"></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="bg-simple rounded mb-1">
+        <ion-input [(ngModel)]="country" class="dark" type="text" placeholder="Country"></ion-input>
+    </ion-item>
+    <h5 class="heading mt-1 mb-1">CARD DETAILS</h5>
+    <ion-item lines="none" class="bg-simple rounded mb-1">
+        <ion-input [(ngModel)]="email" class="dark" type="text" placeholder="Email"></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="bg-simple rounded mb-1">
+        <ion-input [(ngModel)]="cardName" class="dark" type="text" placeholder="Name on the card"></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="bg-simple rounded mb-1">
+        <ion-input [(ngModel)]="cardNumber" class="dark" type="text" placeholder="Card Number"></ion-input>
+    </ion-item>
+    <h5 class="heading mt-1 mb-1"> EXPIRATION (MM/YYYY)</h5>
+
+    <ion-row>
+        <ion-col size="4">
+            <ion-item lines="none" class="bg-simple rounded mb-1">
+                <ion-input [(ngModel)]="month" class="dark" type="text" placeholder="MM"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="4">
+            <ion-item lines="none" class="bg-simple rounded mb-1">
+                <ion-input [(ngModel)]="year" class="dark" type="text" placeholder="YYYY"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="4">
+            <ion-item lines="none" class="bg-simple rounded mb-1">
+                <ion-input [(ngModel)]="cvv" class="dark" type="text" placeholder="CVC"></ion-input>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+
+    <ion-item lines="none">
+        <ion-checkbox [(ngModel)]="checked"></ion-checkbox>
+        <ion-label class="ion-text-wrap">Tick here to confirm that you are at least 18 years old and the age of majority in your place of residence
+        </ion-label>
+    </ion-item>
+
+    <ion-button expand="block"> Submit
+
+    </ion-button>
+
+    <p class="mt-3 heading ion-text-center">Nemesis will make a one-time charge of $0.10 when adding your payment card. The charges on your credit card statement will appear as "Nemesis".</p>
+
+    <img style="margin: 30px;" src="../../assets/imgs/card.png">
+
+    <p class="heading ion-text-center">Fenix International Limited 85, First Floor, Great Portland Street, London W1W 7LT, United Kingdom</p>
+
+</ion-content>

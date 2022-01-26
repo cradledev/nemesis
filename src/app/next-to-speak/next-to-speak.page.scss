@@ -1,0 +1,22 @@
+.anItem {
+    ion-avatar {
+        padding: 2px;
+        margin-right: 15px;
+        img {
+            width: 100px;
+            height: 33px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+}
+
+.bidDiv {
+    //background: linear-gradient(96.25deg, #FF714D -9.4%, #FF4244 111.54%);
+    background: #ffe9ec;
+    //opacity: 0.1;
+    border-radius: 8px;
+    width: 55px;
+    margin: 5px;
+    height: 45px;
+}

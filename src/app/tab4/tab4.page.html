@@ -1,0 +1,58 @@
+<ion-header class="gradientHeader">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Notifications</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullScreen="true">
+
+    <ion-item lines="none" class="bg-none" *ngFor="let notification of allNotification; index as i">
+        <ion-avatar slot="start">
+            <img [src]="service.usersData[notification.uid].profileUrl || './assets/imgs/user1.png'">
+        </ion-avatar>
+        <ion-label>
+            <h5><span class="bold" *ngIf="notification.data.chat">{{service.usersData[notification.uid].fullName}} </span> Send You a message</h5>
+            <p>{{notification.fromNow}}</p>
+        </ion-label>
+    </ion-item>
+
+    <!-- <ion-item lines="none" class="bg-none">
+        <ion-avatar slot="start">
+            <img src="./assets/imgs/user2.png">
+        </ion-avatar>
+        <ion-label>
+            <h5><span class="bold">Angelina </span> Julie liked your photo</h5>
+            <p>5 hours ago</p>
+        </ion-label>
+        <ion-thumbnail class="rounded" slot="end">
+            <img src="./assets/imgs/post1.png">
+        </ion-thumbnail>
+    </ion-item>
+
+    <ion-item lines="none" class="bg-none">
+        <ion-avatar slot="start">
+            <img src="./assets/imgs/user4.png">
+        </ion-avatar>
+        <ion-label>
+            <h5><span class="bold">Marrie </span> Doe followed you</h5>
+            <p>5 hours ago</p>
+        </ion-label>
+    </ion-item>
+
+    <ion-item lines="none" class="bg-none">
+        <ion-avatar slot="start">
+            <img src="./assets/imgs/user3.png">
+        </ion-avatar>
+        <ion-label>
+            <h5><span class="bold">Angelina </span> Julie commented: wow</h5>
+            <p>5 hours ago</p>
+        </ion-label>
+        <ion-thumbnail class="rounded" slot="end">
+            <img src="./assets/imgs/post3.png">
+        </ion-thumbnail>
+    </ion-item> -->
+
+</ion-content>

@@ -1,0 +1,21 @@
+.anItem ion-avatar {
+  padding: 2px;
+  margin-right: 15px;
+}
+
+.anItem ion-avatar img {
+  width: 100px;
+  height: 33px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.bidDiv {
+  background: #ffe9ec;
+  border-radius: 8px;
+  width: 55px;
+  margin: 5px;
+  height: 45px;
+}
+/*# sourceMappingURL=next-to-speak.page.css.map */

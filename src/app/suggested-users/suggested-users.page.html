@@ -1,0 +1,95 @@
+<ion-header class="gradientHeader">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>suggested people</ion-title>
+    </ion-toolbar>
+    <div style="padding: 0 16px 16px 16px;">
+        <ion-item class="rounded" lines="none">
+            <ion-avatar slot="start">
+                <img src="./assets/imgs/search (2).png">
+            </ion-avatar>
+            <ion-input type="text" placeholder="Search..."></ion-input>
+        </ion-item>
+    </div>
+</ion-header>
+
+<ion-content>
+    <ion-item class="mb-1 anItem" routerLink="/others-profile/{{user.uid}}" *ngFor="let user of allUsers;index as i">
+        <ion-avatar slot="start">
+            <img [src]="user?.profileUrl || '../../assets/imgs/user1.png'">
+        </ion-avatar>
+        <ion-label class="ion-text-wrap">
+            <h5>{{user.fullName}}</h5>
+            <p *ngIf="user.city">{{user?.city}},{{user?.country}}</p>
+            <p *ngIf="user.bio">{{user?.bio}}</p>
+        </ion-label>
+        <ion-button slot="end" shape="round" strong="true" class="primary" *ngIf="!service.usersData[this.uid].followers.includes(user.uid)" (click)="toFollow(user.uid)">
+            Follow
+        </ion-button>
+        <ion-button slot="end" shape="round" strong="true" class="primary" *ngIf="service.usersData[this.uid].followers.includes(user.uid)" (click)="toUnFollow(user.uid)">
+            Un follow
+        </ion-button>
+    </ion-item>
+
+    <!-- <ion-item class="mb-1 anItem">
+        <ion-avatar slot="start">
+            <img src="../../assets/imgs/user1.png">
+        </ion-avatar>
+        <ion-label class="ion-text-wrap">
+            <h5>Reggie Morgan</h5>
+            <p>Lahore,Pakistan</p>
+            <p>So, greatfull to sharing my word with you</p>
+        </ion-label>
+        <ion-button slot="end" shape="round" strong="true" class="primary">
+            Follow
+        </ion-button>
+    </ion-item>
+    <ion-item class="mb-1 anItem">
+        <ion-avatar slot="start">
+            <img src="../../assets/imgs/user1.png">
+        </ion-avatar>
+        <ion-label class="ion-text-wrap">
+            <h5>Reggie Morgan</h5>
+            <p>Lahore,Pakistan</p>
+            <p>So, greatfull to sharing my word with you</p>
+        </ion-label>
+        <ion-button slot="end" shape="round" strong="true" class="primary">
+            Follow
+        </ion-button>
+    </ion-item>
+    <ion-item class="mb-1 anItem">
+        <ion-avatar slot="start">
+            <img src="../../assets/imgs/user1.png">
+        </ion-avatar>
+        <ion-label class="ion-text-wrap">
+            <h5>Reggie Morgan</h5>
+            <p>Lahore,Pakistan</p>
+            <p>So, greatfull to sharing my word with you</p>
+        </ion-label>
+        <ion-button slot="end" shape="round" strong="true" class="primary">
+            Follow
+        </ion-button>
+    </ion-item>
+    <ion-item class="mb-1 anItem">
+        <ion-avatar slot="start">
+            <img src="../../assets/imgs/user1.png">
+        </ion-avatar>
+        <ion-label class="ion-text-wrap">
+            <h5>Reggie Morgan</h5>
+            <p>Lahore,Pakistan</p>
+            <p>So, greatfull to sharing my word with you</p>
+        </ion-label>
+        <ion-button slot="end" shape="round" strong="true" class="primary">
+            Follow
+        </ion-button>
+    </ion-item> -->
+
+
+
+
+</ion-content>

@@ -1,0 +1,139 @@
+ion-header {
+    ion-toolbar {
+        --min-height: 65px;
+        --border-width: 0px;
+    }
+
+    .searchbarCont {
+        padding: 0 16px 20px 16px;
+
+        .searchBar {
+            --inner-padding-end: 0px;
+            --padding-start: 10px;
+            --padding-end: 10px;
+            --min-height: 50px;
+            --border-radius: 10px;
+            border-radius: 10px;
+
+            ion-avatar {
+                margin: 0px 15px 0px 0px;
+                height: 40px;
+                width: 40px;
+            }
+        }
+    }
+}
+
+ion-content {
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+
+    .filterCont {
+        --padding-start: 15px;
+        --padding-end: 18px;
+        --inner-padding-end: 0px;
+        --min-height: 44px;
+        border-radius: 8px;
+        --border-radius: 8px;
+        border: 1px solid #06123217;
+
+        ion-select {
+            --padding-end: 0px;
+            --padding-start: 0px;
+            font-size: 14px;
+            --color: black;
+            --placeholder-opacity: 1;
+            min-width: 100%;
+        }
+
+        ion-select::part(icon) {
+            display: none;
+        }
+
+        .downArrow {
+            margin: 0px 0px 0px 8px;
+            font-size: 20px;
+            color: var(--ion-color-dark);
+            --color: var(--ion-color-dark);
+        }
+
+    }
+
+    .nftCont {
+        border: 1px solid #DFDFDF;
+        border-radius: 12px;
+        min-height: 70vw;
+        padding: 15px;
+        margin: 15px 0px 0px 0px;
+        background: white;
+
+        .topHeading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .optBtn {
+                font-size: 24px;
+                color: #8D8D8D;
+            }
+        }
+
+        .userimgsCont {
+            width: 80%;
+
+            .userImg {
+                height: 32px;
+                width: 32px;
+                border: 1px solid white;
+                object-fit: cover;
+                border-radius: 50%;
+                margin: 0px 0px 0px -13px;
+            }
+
+            .userImg:first-child {
+                margin: 0px !important;
+            }
+        }
+
+        .nftImg {
+            width: 100%;
+            height: 77vw;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 18px 0px;
+            vertical-align: middle;
+        }
+
+        .detailsCont {
+            display: flex;
+            justify-content: space-between;
+
+            .details {
+                width: 80%;
+
+                .ratingCont {
+                    margin: 6px 0px;
+                    display: flex;
+                    align-items: center;
+
+                    h5 {
+                        font-size: 16px;
+                    }
+
+                    .result {
+                        color: var(--ion-color-medium);
+                        margin: 0px;
+                        font-size: 15px;
+                    }
+                }
+            }
+
+            .wishBtn {
+                font-size: 28px;
+                color: #8D8D8D;
+                margin-bottom: 10px;
+                align-self: flex-end;
+            }
+        }
+    }
+}

@@ -1,0 +1,161 @@
+<ion-header>
+    <ion-toolbar mode="ios">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title class="ion-text-center">
+            <img src="./assets/imgs/Logo.png">
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-button routerLink="/edit-profile" class="btnColor" shape="round">
+                <ion-icon name="create" slot="start"></ion-icon> Update
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+    <ion-slides pager="true">
+        <ion-slide>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="12" class="ion-no-padding">
+                        <ion-row class="userInfo ion-text-center">
+                            <ion-col size="4">
+                                <p class="appTxt white">
+                                    <span class="bold">112</span> <br /> Followers
+                                </p>
+                            </ion-col>
+                            <ion-col size="4">
+                                <img class="userImg" [src]="userObj?.profileUrl || './assets/imgs/user3.png'">
+                            </ion-col>
+                            <ion-col size="4">
+                                <p class="appTxt white pt-5">Stories</p>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col size="12" class="ion-no-padding">
+                                <div class="ion-text-center white">
+                                    <h5>{{userObj?.fullName}}</h5>
+                                    <p class="appTxt mt-0"><img src="./assets/imgs/map-pin 1.png"> {{userObj?.city}}, {{userObj?.country}}</p>
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-slide>
+        <ion-slide *ngIf="userObj?.bio">
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="12" class="ion-no-padding">
+                        <div class="ion-text-center white ion-padding-start ion-padding-end">
+                            <h5><u>Bio</u></h5>
+                            <p style="font-size: 14px;" class="mt-0">
+                                {{userObj?.bio}}
+                            </p>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-slide>
+    </ion-slides>
+    <img class="overlayCurve" src="./assets/imgs/curve.png">
+</ion-header>
+
+
+
+
+<ion-content fullScreen="true">
+
+
+
+
+    <div class="segmentContainer mt-1">
+        <ion-segment [(ngModel)]="activeTab">
+            <ion-segment-button value="activity">Activity</ion-segment-button>
+            <ion-segment-button value="articles">Articles</ion-segment-button>
+            <ion-segment-button value="music">Music</ion-segment-button>
+        </ion-segment>
+    </div>
+
+    <div *ngIf="activeTab=='activity'">
+        <ion-slides [options]="slideOpts">
+            <ion-slide *ngFor="let item of dummyItems">
+                <ion-row>
+                    <ion-col class="anItem" size="12">
+                        <img src="./assets/imgs/gallery.png">
+                        <img class="absoluteIcon" src="./assets/imgs/images.png">
+                        <p class="white appTxt">
+                            <img src="./assets/imgs/clock 1.png"> 12 min ago
+                        </p>
+                    </ion-col>
+                    <ion-col class="anItem" size="12">
+                        <img src="./assets/imgs/gallery.png">
+                        <img class="absoluteIcon" src="./assets/imgs/images.png">
+                        <p class="white appTxt">
+                            <img src="./assets/imgs/clock 1.png"> 12 min ago
+                        </p>
+                    </ion-col>
+                </ion-row>
+            </ion-slide>
+        </ion-slides>
+    </div>
+    <div *ngIf="activeTab=='articles'">
+        <ion-item (click)="viewDocument()">
+            <ion-label text-wrap>
+                <h5> 4 Distractions That Can Damage Your Music Career</h5>
+                <p><span class="primary mr-2">06 mins read</span> 2hr ago </p>
+            </ion-label>
+            <img src="../../assets/imgs/file.png" slot="end">
+
+        </ion-item>
+        <ion-item (click)="viewDocument()">
+            <ion-label text-wrap>
+                <h5> 4 Distractions That Can Damage Your Music Career</h5>
+                <p><span class="primary mr-2">06 mins read</span> 2hr ago </p>
+            </ion-label>
+            <img src="../../assets/imgs/file.png" slot="end">
+
+        </ion-item>
+        <ion-item (click)="viewDocument()">
+            <ion-label text-wrap>
+                <h5> 4 Distractions That Can Damage Your Music Career</h5>
+                <p><span class="primary mr-2">06 mins read</span> 2hr ago </p>
+            </ion-label>
+            <img src="../../assets/imgs/file.png" slot="end">
+
+        </ion-item>
+        <ion-item (click)="viewDocument()">
+            <ion-label text-wrap>
+                <h5> 4 Distractions That Can Damage Your Music Career</h5>
+                <p><span class="primary mr-2">06 mins read</span> 2hr ago </p>
+            </ion-label>
+            <img src="../../assets/imgs/file.png" slot="end">
+
+        </ion-item>
+
+    </div>
+
+    <div *ngIf="activeTab=='music'">
+
+        <ion-slides [options]="slideOpts">
+            <ion-slide *ngFor="let item of dummyItems">
+                <ion-row>
+                    <ion-col class="anItem" size="12">
+                        <img src="./assets/imgs/profileMusic.png">
+
+                        <p class="white appTxt">
+                            <img src="./assets/imgs/clock 1.png"> 12 min ago
+                        </p>
+                    </ion-col>
+                    <ion-col class="anItem" size="12">
+                        <img src="./assets/imgs/profileMusic.png">
+                        <p class="white appTxt">
+                            <img src="./assets/imgs/clock 1.png"> 12 min ago
+                        </p>
+                    </ion-col>
+                </ion-row>
+            </ion-slide>
+        </ion-slides>
+    </div>
+
+
+</ion-content>

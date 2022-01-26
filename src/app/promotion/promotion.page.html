@@ -1,0 +1,39 @@
+<ion-header class="gradientHeader">
+    <ion-toolbar mode="ios">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Promotions
+        </ion-title>
+    </ion-toolbar>
+    <ion-row class="segmentBtns">
+        <ion-col size="6">
+            <ion-button fill="clear" (click)="activeTab='active'" [class.inactiveTab]="activeTab!='active'" [class.activeTab]="activeTab=='active'" class="leftBtn" shape="round" expand="block">
+                Active
+            </ion-button>
+        </ion-col>
+        <ion-col size="6">
+            <ion-button fill="clear" (click)="activeTab='inactive'" [class.inactiveTab]="activeTab!='inactive'" [class.activeTab]="activeTab=='inactive'" class="rightBtn" shape="round" expand="block">
+                Inactive
+            </ion-button>
+        </ion-col>
+    </ion-row>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-item class="anItem" lines="none" detail="true">
+            <ion-thumbnail slot="start" class="">
+                <img style="border-radius: 10px;" src="../../assets/imgs/promotion.png">
+            </ion-thumbnail>
+            <ion-label>
+                <h2>Promote Top Post</h2>
+                <p class="ion-text-wrap">Find a bigger audience for this high enagagement post.</p>
+            </ion-label>
+        </ion-item>
+    </ion-card>
+</ion-content>
+<ion-footer class="ion-padding">
+    <ion-button routerLink="/create-promotion" expand="block" class="h-50 rounded boxshadow">Create Promotion</ion-button>
+</ion-footer>

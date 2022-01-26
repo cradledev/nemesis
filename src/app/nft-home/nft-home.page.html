@@ -1,0 +1,121 @@
+<ion-header class="gradientHeader">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button mode="md"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <img src="./assets/imgs/Logo.png">
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+      <ion-button routerLink="/advance-search" color="light">
+        <ion-icon name="search" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="filterBtnsCont">
+    <div *ngFor="let filter of filters" (click)="activeFilter = filter" [class.active]="activeFilter == filter"
+      class="filterBtn">{{filter}}
+    </div>
+  </div>
+  <div class="headingCont">
+    <h3>Featured</h3>
+  </div>
+  <div class="horizontalScroll">
+    <div class="silderCont">
+      <!-- <img src="/assets/imgs/nftImg1.png" class="slideImg"> -->
+      <div class="nftImgCont">
+        <img src="/assets/imgs/music5.png">
+      </div>
+      <div class="txtCont">
+        <h5 class="my-0 bold">Ring of Trust</h5>
+        <div class="ratingCont">
+          <h5 class="primary my-0">0.332 ETH</h5>
+          <p class="result pl-1">6 of 10</p>
+        </div>
+        <div class="ratingCont">
+          <p class="result pr-1">Highest bid</p>
+          <h5 class="tertiary my-0">0.005 WETH</h5>
+        </div>
+      </div>
+    </div>
+    <div class="silderCont">
+      <div class="nftImgCont">
+        <img src="/assets/imgs/music5.png">
+      </div>
+      <div class="txtCont">
+        <h5 class="my-0 bold">Ring of Trust</h5>
+        <div class="ratingCont">
+          <h5 class="primary my-0">0.332 ETH</h5>
+          <p class="result pl-1">6 of 10</p>
+        </div>
+        <div class="ratingCont">
+          <p class="result pr-1">Highest bid</p>
+          <h5 class="tertiary my-0">0.005 WETH</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ion-button routerLink="/create-single-nft" color="primary" class="createBtn" expand="block">Create</ion-button>
+  <div class="headingCont">
+    <h3>Explore 🔥</h3>
+    <div routerLink="/nft-list" class="sortBtn">
+      <img src="/assets/imgs/filterIcon.svg">
+      Filter & Sort
+    </div>
+  </div>
+  <div routerLink="/nft-details" class="nftCont">
+    <div class="topHeading">
+      <div class="userimgsCont">
+        <img src="/assets/imgs/user5.png" class="userImg">
+        <img src="/assets/imgs/user4.png" class="userImg">
+        <img src="/assets/imgs/user10.png" class="userImg">
+      </div>
+      <ion-icon class="optBtn" name="ellipsis-horizontal"></ion-icon>
+    </div>
+    <img src="/assets/imgs/nftImg2.png" class="nftImg">
+    <div class="detailsCont">
+      <div class="details">
+        <h5 class="my-0 bold">Ring of Trust</h5>
+        <div class="ratingCont">
+          <h5 class="primary my-0">0.332 ETH</h5>
+          <p class="result pl-1">6 of 10</p>
+        </div>
+        <div class="ratingCont">
+          <p class="result pr-1">Highest bid</p>
+          <h5 class="tertiary my-0">0.005 WETH</h5>
+        </div>
+      </div>
+      <ion-icon class="wishBtn" name="heart-outline"></ion-icon>
+    </div>
+  </div>
+  <div routerLink="/nft-details" class="nftCont">
+    <div class="topHeading">
+      <div class="userimgsCont">
+        <img src="/assets/imgs/user5.png" class="userImg">
+        <img src="/assets/imgs/user4.png" class="userImg">
+        <img src="/assets/imgs/user10.png" class="userImg">
+      </div>
+      <ion-icon class="optBtn" name="ellipsis-horizontal"></ion-icon>
+    </div>
+    <img src="/assets/imgs/nftImg3.png" class="nftImg">
+    <div class="detailsCont">
+      <div class="details">
+        <h5 class="my-0 bold">Ring of Trust</h5>
+        <div class="ratingCont">
+          <h5 class="primary my-0">0.332 ETH</h5>
+          <p class="result pl-1">6 of 10</p>
+        </div>
+        <div class="ratingCont">
+          <p class="result pr-1">Highest bid</p>
+          <h5 class="tertiary my-0">0.005 WETH</h5>
+        </div>
+      </div>
+      <ion-icon class="wishBtn" name="heart-outline"></ion-icon>
+    </div>
+  </div>
+</ion-content>

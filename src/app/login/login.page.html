@@ -1,0 +1,48 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="ion-padding bgGradient">
+
+    <div class="ion-text-center white mt-3 mb-6">
+        <img src="./assets/imgs/Logo.png">
+        <h2>Welcome Back!</h2>
+        <p class="mt-0">Login to your account</p>
+    </div>
+    <div [formGroup]="onLoginForm">
+        <p class="appTxt white mb-0">E-MAIL</p>
+        <ion-item class="loginInputs bg-none rounded" lines="none">
+            <ion-input class="white" type="email" formControlName="email" placeholder="Email address"></ion-input>
+        </ion-item>
+        <div *ngFor="let validation of validation_messages.email">
+            <p class="errorMsg" *ngIf="onLoginForm.get('email').hasError(validation.type) && 
+    (onLoginForm.get('email').dirty || onLoginForm.get('email').touched)">
+                {{ validation.message }}
+            </p>
+        </div>
+
+        <p class="appTxt white mb-0">PASSWORD</p>
+        <ion-item class="loginInputs bg-none rounded" lines="none">
+            <ion-input class="white" type="password" formControlName="password" placeholder="Password"></ion-input>
+        </ion-item>
+        <div *ngFor="let validation of validation_messages.password">
+            <p class="errorMsg" *ngIf="onLoginForm.get('password').hasError(validation.type) && 
+    (onLoginForm.get('password').dirty || onLoginForm.get('password').touched)">
+                {{ validation.message }}
+            </p>
+        </div>
+
+        <p class="ion-text-right white appTxt mb-5">
+            <span routerLink="/reset-password">Forgot your password?</span>
+        </p>
+
+        <ion-button routerDirection="root" expand="block" color="lighter" class="rounded h-50" (click)="loginAccount(onLoginForm.value)" [disabled]="!onLoginForm.valid">Login
+        </ion-button>
+        <ion-button routerLink="/signup" fill="clear" expand="block" color="lighter" class=" h-50">Don't have an account? Signup
+        </ion-button>
+
+        <!-- <ion-button expand="block" (click)="callCallBackFunction()"> Login Via Facebook</ion-button> -->
+    </div>
+</ion-content>

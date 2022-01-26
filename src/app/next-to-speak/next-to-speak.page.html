@@ -1,0 +1,94 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Next To Speak</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-list class="anItem">
+        <ion-item class="rounded">
+            <p>1.</p>
+            <ion-avatar>
+                <img src="../../assets/imgs/user1.png">
+            </ion-avatar>
+            <ion-label class="ml-2">John Cena</ion-label>
+            <p class="primary" slot="end">$10</p>
+        </ion-item>
+        <ion-item class="rounded">
+            <p>2.</p>
+            <ion-avatar>
+                <img src="../../assets/imgs/user1.png">
+            </ion-avatar>
+            <ion-label class="ml-2">John Cena</ion-label>
+            <p class="primary" slot="end">$10</p>
+        </ion-item>
+        <ion-item class="rounded">
+            <p>3.</p>
+            <ion-avatar>
+                <img src="../../assets/imgs/user1.png">
+            </ion-avatar>
+            <ion-label class="ml-2">John Cena</ion-label>
+            <p class="primary" slot="end">$10</p>
+        </ion-item>
+
+        <ion-item class="rounded">
+            <p>4.</p>
+            <ion-avatar>
+                <img src="../../assets/imgs/user1.png">
+            </ion-avatar>
+            <ion-label class="ml-2">John Cena</ion-label>
+            <p class="primary" slot="end">$10</p>
+        </ion-item>
+        <ion-item class="rounded">
+            <p>5.</p>
+            <ion-avatar>
+                <img src="../../assets/imgs/user1.png">
+            </ion-avatar>
+            <ion-label class="ml-2">John Cena</ion-label>
+            <p class="primary" slot="end">$10</p>
+        </ion-item>
+
+        <ion-row class="mt-2 ion-padding">
+            <ion-col size="4">
+                <h5>Bid</h5>
+            </ion-col>
+            <ion-col size="4">
+                <ion-button color="success" expand="block">
+                    Yes
+                </ion-button>
+            </ion-col>
+            <ion-col size="4">
+                <ion-button color="danger" expand="block">
+                    No
+                </ion-button>
+            </ion-col>
+
+        </ion-row>
+        <div class="ion-padding" style="display: inline-flex;">
+            <div class="bidDiv">
+                <p class="ion-text-center primary mb-1">Free</p>
+            </div>
+            <div class="bidDiv">
+                <p class="ion-text-center primary mb-1">$1</p>
+            </div>
+            <div class="bidDiv">
+                <p class="ion-text-center primary">$2</p>
+            </div>
+
+            <div class="bidDiv">
+                <p class="ion-text-center primary">$3</p>
+            </div>
+            <div class="bidDiv">
+                <p class="ion-text-center primary">$4</p>
+            </div>
+        </div>
+
+    </ion-list>
+
+    <ion-button expand="block" routerLink="/payment">
+        Guaranteed Next $10
+    </ion-button>
+</ion-content>

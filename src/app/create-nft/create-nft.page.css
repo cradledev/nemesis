@@ -1,0 +1,42 @@
+ion-header ion-toolbar {
+  --min-height: 65px;
+  --border-width: 0px;
+}
+
+ion-header ion-toolbar ion-title {
+  font-size: 21px;
+  font-weight: normal;
+}
+
+ion-content {
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+}
+
+ion-content .desp {
+  margin: 0px;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+ion-content .createNftOpt {
+  padding: 15px 5px;
+  border: 1px solid #E8E8E8;
+  border-radius: 10px;
+  text-align: center;
+}
+
+ion-content .createNftOpt .optImg {
+  width: 85%;
+  height: 220px;
+  margin: 8px 0px 15px 0px;
+}
+
+ion-content .desp2 {
+  margin: 20px 0px 0px 0px;
+  line-height: 1.5;
+  color: var(--ion-color-medium);
+  text-align: center;
+  font-size: 14px;
+}
+/*# sourceMappingURL=create-nft.page.css.map */

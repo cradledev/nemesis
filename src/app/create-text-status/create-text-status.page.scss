@@ -1,0 +1,36 @@
+.box {
+    height: 100%;
+    width: 100%;
+}
+
+.colorChange {
+    position: absolute;
+    z-index: 10;
+    bottom: 0px;
+    left: 0px;
+    color: white !important;
+}
+
+.send {
+    position: absolute;
+    z-index: 10;
+    bottom: 0px;
+    right: 0px;
+    color: white !important;
+}
+
+textarea {
+    width: calc(100% - 40px);
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0) !important;
+    border: none !important;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translate(0, -50%);
+    &::placeholder {
+        color: white;
+    }
+}

@@ -1,0 +1,150 @@
+ion-header {
+  background-image: url("/assets/imgs/Bg Shapes (1).png"), linear-gradient(92.89deg, #ff714d -9.4%, #ff4244 111.54%) !important;
+}
+
+ion-header ion-slides {
+  padding: 1em 0 2em 0;
+}
+
+ion-header .overlayCurve {
+  width: 100%;
+  margin-top: -2em;
+  height: 60px;
+  margin-bottom: -1em;
+}
+
+ion-header .userInfo ion-col {
+  padding: 0;
+}
+
+ion-header .userInfo ion-col .userImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 5px solid #ffffff;
+}
+
+ion-header .userInfo ion-col p {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  border-radius: 50%;
+  padding-top: 1.6em;
+  -webkit-box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.25);
+}
+
+ion-header .userInfo ion-col p.pt-5 {
+  padding-top: 2.5em;
+}
+
+ion-content .segmentContainer {
+  padding: 0 10px;
+  border-top: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+}
+
+ion-content .segmentContainer ion-segment-button {
+  text-transform: none !important;
+}
+
+ion-content ion-slides {
+  padding: 10px;
+}
+
+ion-content ion-slides .anItem {
+  width: 140px;
+  position: relative;
+  padding-bottom: 0;
+}
+
+ion-content ion-slides .anItem .mainImg {
+  width: 100%;
+  height: 135px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+
+ion-content ion-slides .anItem .absoluteIcon {
+  width: 25px;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+}
+
+ion-content ion-slides .anItem p {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 1em;
+  text-align: left;
+}
+
+ion-content ion-slides .anItem p img {
+  width: 14px;
+}
+
+.suggestedSlide {
+  padding: 10px;
+}
+
+.suggestedSlide .suggestedBox {
+  background-color: #ffffff;
+  width: 140px;
+  height: 180px;
+  position: relative;
+  border: 1px solid #E5E5E5;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 4px 54px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 4px 54px rgba(0, 0, 0, 0.05);
+}
+
+.suggestedSlide .suggestedBox .userImg {
+  width: 50px;
+  height: 50px;
+  top: 30px;
+  position: absolute;
+  right: 43px;
+}
+
+.suggestedSlide .suggestedBox .crossIcon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.suggestedSlide .suggestedBox h5 {
+  font-size: 12px;
+  position: absolute;
+  top: 65px;
+  padding: 8px 20px 8px 30px;
+}
+
+.suggestedSlide .suggestedBox p {
+  position: absolute;
+  font-size: 10px;
+  padding: 19px 20px 20px 33px;
+  top: 75px;
+}
+
+.suggestedSlide .suggestedBox .followBtn {
+  position: absolute;
+  top: 120px;
+  color: white;
+  --padding-bottom: 0px;
+  --padding-top: 0px;
+  --padding-start: 25px;
+  --padding-end: 25px;
+  left: 20px;
+}
+
+.btnColor {
+  --background: #07B9FF !important;
+  --color: var(--ion-color-lighter) !important;
+}
+/*# sourceMappingURL=others-profile.page.css.map */

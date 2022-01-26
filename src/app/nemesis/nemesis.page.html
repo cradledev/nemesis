@@ -1,0 +1,79 @@
+<ion-header class="gradientHeader">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            <img src="./assets/imgs/Logo.png">
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-button routerLink="/advance-search" color="light">
+                <ion-icon name="search" slot="icon-only"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+    <ion-row class="segmentBtns">
+        <ion-col size="4">
+            <ion-button fill="clear" (click)="activeTab='cypher'" [class.inactiveTab]="activeTab!='cypher'" [class.activeTab]="activeTab=='cypher'" shape="round" expand="block"> Cypher
+            </ion-button>
+        </ion-col>
+    </ion-row>
+</ion-header>
+
+<ion-content fullScreen="true" class="ion-padding">
+
+    <div class="anItem rounded bg-white ion-padding-top newsFeedPost">
+        <ion-row routerLink="/join-nemesis">
+            <ion-col size="6" class="ion-text-center">
+                <img class="userAvatar" src="./assets/imgs/user1.png">
+                <p class="dark bold mb-0">Mic Morre</p>
+                <p class="gray mt-0"><small>
+            <img src="./assets/imgs/Location.png"> Brooklyn, NYC
+          </small></p>
+            </ion-col>
+            <ion-col size="6" class="ion-text-center">
+                <img class="userAvatar" src="./assets/imgs/user2.png">
+                <p class="dark bold mb-0">Mic Morre</p>
+                <p class="gray mt-0"><small>
+            <img src="./assets/imgs/Location.png"> Brooklyn, NYC
+          </small></p>
+            </ion-col>
+        </ion-row>
+        <ion-item lines="none">
+            <ion-label>
+                <p>2000 Likes</p>
+            </ion-label>
+            <ion-label>
+                <p>124 Dislikes</p>
+            </ion-label>
+            <ion-label>
+                <p>1119 Comments</p>
+            </ion-label>
+        </ion-item>
+        <hr />
+        <ion-row class="socialBtns">
+            <ion-col size="4">
+                <ion-button expand="block" class="ion-no-padding ion-no-margin activeBtn" fill="clear">
+                    <div class="imgContainer">
+                        <img src="./assets/imgs/like.png">
+                    </div> Like
+                </ion-button>
+            </ion-col>
+            <ion-col size="4">
+                <ion-button expand="block" class="ion-no-padding ion-no-margin gray" fill="clear">
+                    <div class="imgContainer">
+                        <img src="./assets/imgs/dislike.png">
+                    </div> Dislike
+                </ion-button>
+            </ion-col>
+            <ion-col size="4">
+                <ion-button expand="block" class="ion-no-padding ion-no-margin gray" fill="clear">
+                    <div class="imgContainer">
+                        <img src="./assets/imgs/comment.png">
+                    </div> Comment
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </div>
+
+</ion-content>

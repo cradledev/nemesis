@@ -1,0 +1,35 @@
+<ion-header class="gradientHeader">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>settings</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-list style="border-radius: 15px;">
+        <ion-item routerLink="/blocked-list" class="p-2">
+            <ion-icon name="remove-circle-outline" slot="start"></ion-icon>
+            <ion-label>Blocked List</ion-label>
+        </ion-item>
+
+        <ion-item routerLink="/contact-us" class="p-2">
+            <ion-icon name="call-outline" slot="start"></ion-icon>
+            <ion-label>Contact Us</ion-label>
+        </ion-item>
+
+        <ion-item routerLink="/terms-services" class="p-2">
+            <ion-icon name="document-outline" slot="start"></ion-icon>
+            <ion-label>Terms of Services</ion-label>
+        </ion-item>
+        <ion-item routerLink="/chnage-password" class="p-2">
+            <ion-icon name="lock-open-outline" slot="start"></ion-icon>
+            <ion-label>Change Password</ion-label>
+        </ion-item>
+        <ion-item (click)="logoutUser()" class="p-2">
+            <ion-icon name="log-out-outline" slot="start" color="danger"></ion-icon>
+            <ion-label>Logout</ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>

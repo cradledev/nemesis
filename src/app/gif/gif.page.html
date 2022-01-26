@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Search For Gifs</ion-title>
+    </ion-toolbar>
+    <div style="padding: 0 16px 16px 16px;">
+        <ion-item class="rounded" lines="none">
+            <ion-avatar slot="start">
+                <img src="./assets/imgs/search (2).png">
+            </ion-avatar>
+            <ion-input type="text" [(ngModel)]="searchTxt" placeholder="Search..."></ion-input>
+        </ion-item>
+    </div>
+</ion-header>
+
+<ion-content>
+    <ion-row>
+        <ion-col size="6" *ngFor="let gif of gifs" [hidden]="gif.title.toLowerCase().indexOf(searchTxt.toLowerCase()) < 0" (click)="sendComment(gif.images.downsized.url)">
+            <img [src]="gif.images.downsized.url">
+        </ion-col>
+    </ion-row>
+</ion-content>

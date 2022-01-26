@@ -1,0 +1,107 @@
+ion-content .storyImg {
+  width: 100%;
+  max-height: 100vh;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+ion-content .topInfo {
+  position: fixed;
+  width: 100%;
+  top: 1em;
+}
+
+ion-content .topInfo .progressBar {
+  margin: 0 16px;
+  border-bottom: 1px solid var(--ion-color-primary);
+}
+
+ion-content .bottomViews {
+  position: fixed;
+  bottom: 1em;
+  width: 100%;
+}
+
+ion-content .bottomViews img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 1px solid var(--ion-color-lighter);
+}
+
+ion-content .bottomViews img.overlayImg {
+  margin: 0 1em 0 -3em;
+}
+
+.viewerSheet {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.viewerSheet .innerContent {
+  border-radius: 16px 16px 0 0;
+  padding: 12px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.viewerSheet .innerContent ion-item {
+  --inner-padding-end: 0 !important;
+}
+
+.viewerSheet .innerContent img.boxshadow {
+  height: 150px;
+  width: 100%;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.viewerSheet .innerContent .addStory {
+  height: 130px;
+  margin: 10px 0;
+  border-radius: 10px;
+  background: linear-gradient(108.46deg, #ff714d21 -9.4%, #ff424523 111.54%) !important;
+}
+
+.viewerSheet .innerContent .scrollingContent {
+  max-height: 55vh;
+  overflow-y: scroll;
+}
+
+.viewerSheet .innerContent .scrollingContent ion-item ion-avatar {
+  width: 60px;
+  height: 60px;
+  position: relative;
+}
+
+.viewerSheet .innerContent .scrollingContent ion-item ion-avatar img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 1px solid var(--ion-color-primary);
+}
+
+.viewerSheet .innerContent .scrollingContent ion-item .onlineIcon {
+  background: var(--ion-color-success);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  bottom: 3px;
+  border: 1px solid #ffffff;
+}
+
+::-webkit-scrollbar {
+  display: none !important;
+}
+/*# sourceMappingURL=view-story.page.css.map */

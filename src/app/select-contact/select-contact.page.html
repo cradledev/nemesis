@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Invite Friends</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="dismiss()" color="light">
+                <ion-icon name="close" slot="icon-only"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+    <div style="padding: 0 16px">
+        <ion-item lines="none" class="lightshadow rounded">
+            <ion-icon name="search" slot="start"></ion-icon>
+            <ion-input #search (ionChange)="chooseContacts(query)" [(ngModel)]="query" type="text" placeholder="Search here..." clearInput></ion-input>
+        </ion-item>
+        <ion-item style="margin-top: 8px !important;" class="bg-none" lines="none">
+            <ion-label class="mb-0">
+                <p>
+                    <span (click)="submit();" class="white"><u>{{getSelectedContacts()}} Selected</u></span>
+                    <span (click)="selectAll(); allSelected=!allSelected" [class.primary]="allSelected" class="ion-float-right">Select all</span>
+                </p>
+            </ion-label>
+        </ion-item>
+    </div>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+
+    <ion-item lines="none" class="rounded mb-1 lightshadow" *ngFor="let contact of allContacts;">
+        <ion-label>
+            <h5>{{contact.name}}</h5>
+            <p>{{contact.phone}}</p>
+        </ion-label>
+        <ion-checkbox [(ngModel)]="contact.checked" slot="end"></ion-checkbox>
+    </ion-item>
+
+</ion-content>
+
+
+<ion-footer class="ion-padding">
+    <ion-button (click)="submit()" expand="block" class="h-50 rounded boxshadow">Next</ion-button>
+</ion-footer>

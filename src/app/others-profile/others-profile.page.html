@@ -1,0 +1,209 @@
+<ion-header class="gradientHeader">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            <img src="./assets/imgs/Logo.png">
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-button class="btnColor" (click)="toFollow()" *ngIf="!service.usersData[uid].followers?.includes(this.myUid)" shape="round">
+                <img style="margin-right: 7px;" src="./assets/imgs/Follow.png"> Follow
+            </ion-button>
+            <ion-button class="btnColor" (click)="toUnFollow()" *ngIf="service.usersData[uid].followers?.includes(this.myUid)" shape="round">
+                Un Follow
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+    <ion-slides pager="true">
+        <ion-slide>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="12" class="ion-no-padding">
+                        <ion-row class="userInfo ion-text-center">
+                            <ion-col size="4">
+                                <p class="appTxt white">
+                                    <span class="bold">{{service.usersData[uid].followers?.length}}</span> <br /> Followers
+                                </p>
+                            </ion-col>
+                            <ion-col size="4">
+                                <img class="userImg" [src]="service.usersData[uid]?.profileUrl || '/assets/imgs/user3.png'">
+                            </ion-col>
+                            <ion-col size="4">
+                                <p class="appTxt white pt-5">Stories</p>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col size="12" class="ion-no-padding">
+                                <div class="ion-text-center white">
+                                    <h5>{{service.usersData[uid]?.fullName}}</h5>
+                                    <p class="appTxt mt-0"><img src="./assets/imgs/map-pin 1.png"> {{service.usersData[uid]?.city}}, {{service.usersData[uid]?.country}}</p>
+                                    <ion-button (click)="toChatScreen()" shape="round" color="lighter">Message</ion-button>
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-slide>
+        <ion-slide>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="12" class="ion-no-padding">
+                        <div class="ion-text-center white ion-padding-start ion-padding-end">
+                            <h5><u>Bio</u></h5>
+                            <p style="font-size: 14px;" class="mt-0">
+                                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                            </p>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-slide>
+    </ion-slides>
+    <img class="overlayCurve" src="./assets/imgs/curve.png">
+</ion-header>
+
+
+<ion-content fullScreen="true">
+
+    <ion-item lines="none">
+        <ion-label>
+            Suggested People
+        </ion-label>
+        <p slot="end" class="primary" routerLink="/suggested-users">See all</p>
+    </ion-item>
+
+
+    <ion-slides class="suggestedSlide" [options]="slideOpts">
+        <ion-slide *ngFor="let user of allUsers | slice:1:5">
+            <div class="suggestedBox">
+                <img class="userImg" src="../../assets/imgs/user2.png">
+                <img class="crossIcon" src="../../assets/imgs/Group 10.png">
+                <h5>{{user.fullName}}</h5>
+                <p>{{user.city}} , {{user.country}}</p>
+                <ion-button slot="end" shape="round" strong="true" *ngIf="!service.usersData[this.myUid].followers.includes(user.uid)" class="followBtn primary" (click)="toFollowOther(user.uid)">
+                    Follow
+                </ion-button>
+                <ion-button slot="end" shape="round" strong="true" class="followBtn primary" *ngIf="service.usersData[this.myUid].followers.includes(user.uid)" (click)="toUnFollowOther(user.uid)">
+                    Un follow
+                </ion-button>
+            </div>
+        </ion-slide>
+        <!-- <ion-slide>
+            <div class="suggestedBox">
+                <img class="userImg" src="../../assets/imgs/user2.png">
+                <img class="crossIcon" src="../../assets/imgs/Group 10.png">
+                <h5>Reggie Moland</h5>
+                <p>Lahore,Pakistan</p>
+                <ion-button slot="end" shape="round" strong="true" class="followBtn primary">
+                    Follow
+                </ion-button>
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <div class="suggestedBox">
+                <img class="userImg" src="../../assets/imgs/user2.png">
+                <img class="crossIcon" src="../../assets/imgs/Group 10.png">
+                <h5>Reggie Moland</h5>
+                <p>Lahore,Pakistan</p>
+                <ion-button slot="end" shape="round" strong="true" class="followBtn primary">
+                    Follow
+                </ion-button>
+            </div>
+        </ion-slide> -->
+
+
+    </ion-slides>
+
+    <div class="segmentContainer mt-1">
+        <ion-segment [(ngModel)]="activeTab">
+            <ion-segment-button value="activity">Activity</ion-segment-button>
+            <ion-segment-button value="articles">Articles</ion-segment-button>
+            <ion-segment-button value="music">Music</ion-segment-button>
+        </ion-segment>
+    </div>
+
+    <div *ngIf="activeTab=='activity'">
+        <ion-slides [options]="slideOpts">
+            <ion-slide *ngFor="let item of dummyItems">
+                <ion-row>
+                    <ion-col class="anItem" size="12">
+                        <img src="./assets/imgs/gallery.png">
+                        <img class="absoluteIcon" src="./assets/imgs/images.png">
+                        <p class="white appTxt">
+                            <img src="./assets/imgs/clock 1.png"> 12 min ago
+                        </p>
+                    </ion-col>
+                    <ion-col class="anItem" size="12">
+                        <img src="./assets/imgs/gallery.png">
+                        <img class="absoluteIcon" src="./assets/imgs/images.png">
+                        <p class="white appTxt">
+                            <img src="./assets/imgs/clock 1.png"> 12 min ago
+                        </p>
+                    </ion-col>
+                </ion-row>
+            </ion-slide>
+        </ion-slides>
+    </div>
+    <div *ngIf="activeTab=='articles'">
+        <ion-item (click)="viewDocument()">
+            <ion-label text-wrap>
+                <h5> 4 Distractions That Can Damage Your Music Career</h5>
+                <p><span class="primary mr-2">06 mins read</span> 2hr ago </p>
+            </ion-label>
+            <img src="../../assets/imgs/file.png" slot="end">
+
+        </ion-item>
+        <ion-item (click)="viewDocument()">
+            <ion-label text-wrap>
+                <h5> 4 Distractions That Can Damage Your Music Career</h5>
+                <p><span class="primary mr-2">06 mins read</span> 2hr ago </p>
+            </ion-label>
+            <img src="../../assets/imgs/file.png" slot="end">
+
+        </ion-item>
+        <ion-item (click)="viewDocument()">
+            <ion-label text-wrap>
+                <h5> 4 Distractions That Can Damage Your Music Career</h5>
+                <p><span class="primary mr-2">06 mins read</span> 2hr ago </p>
+            </ion-label>
+            <img src="../../assets/imgs/file.png" slot="end">
+
+        </ion-item>
+        <ion-item (click)="viewDocument()">
+            <ion-label text-wrap>
+                <h5> 4 Distractions That Can Damage Your Music Career</h5>
+                <p><span class="primary mr-2">06 mins read</span> 2hr ago </p>
+            </ion-label>
+            <img src="../../assets/imgs/file.png" slot="end">
+
+        </ion-item>
+
+    </div>
+
+    <div *ngIf="activeTab=='music'">
+
+        <ion-slides [options]="slideOpts">
+            <ion-slide *ngFor="let item of dummyItems">
+                <ion-row>
+                    <ion-col class="anItem" size="12">
+                        <img src="./assets/imgs/profileMusic.png">
+                        <img class="absoluteIcon" src="./assets/imgs/images.png">
+                        <p class="white appTxt">
+                            <img src="./assets/imgs/clock 1.png"> 12 min ago
+                        </p>
+                    </ion-col>
+                    <ion-col class="anItem" size="12">
+                        <img src="./assets/imgs/profileMusic.png">
+                        <img class="absoluteIcon" src="./assets/imgs/images.png">
+                        <p class="white appTxt">
+                            <img src="./assets/imgs/clock 1.png"> 12 min ago
+                        </p>
+                    </ion-col>
+                </ion-row>
+            </ion-slide>
+        </ion-slides>
+    </div>
+
+</ion-content>

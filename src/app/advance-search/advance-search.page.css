@@ -1,0 +1,40 @@
+ion-item {
+  border: 1px solid #dedede !important;
+}
+
+ion-item ion-select {
+  width: 100% !important;
+  padding-left: 0 !important;
+  max-width: 100% !important;
+}
+
+.userList {
+  padding: 0 10px;
+}
+
+.userList .anItem {
+  border: 1px solid #dedede;
+  padding: 10px 0;
+  position: relative;
+}
+
+.userList .anItem .onlineSymbol {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--ion-color-success);
+  position: absolute;
+  right: 1.5em;
+  bottom: 2.2em;
+}
+
+.userList .anItem img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 2px;
+  border: 1px solid var(--ion-color-primary);
+}
+/*# sourceMappingURL=advance-search.page.css.map */

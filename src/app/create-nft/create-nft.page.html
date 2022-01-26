@@ -1,0 +1,34 @@
+<ion-header class="gradientHeader">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button mode="md"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Create</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="11" class="ion-no-padding">
+      <h3 class="bold">Create collectible</h3>
+      <p class="desp">Choose “Single” if you want your collectible to be one of a kind or “Multiple” if you want to sell
+        one
+        collectible multiple times</p>
+      <ion-row class="mt-1">
+        <ion-col size="6" class="pl-0" style="padding-right: 8px;">
+          <div routerLink="/create-single-nft" class="createNftOpt">
+            <img src="/assets/imgs/createnft1.png" class="optImg">
+            <h5 class="bold my-0">Single</h5>
+          </div>
+        </ion-col>
+        <ion-col size="6" class="pr-0" style="padding-left: 8px;">
+          <div routerLink="/create-multiple-nft" class="createNftOpt">
+            <img src="/assets/imgs/createnft2.png" class="optImg">
+            <h5 class="bold my-0">Multiple</h5>
+          </div>
+        </ion-col>
+      </ion-row>
+      <p class="desp2">We do not own your private keys and cannot access your funds without your confirmation</p>
+    </ion-col>
+  </ion-row>
+</ion-content>

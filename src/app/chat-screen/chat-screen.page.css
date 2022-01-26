@@ -1,0 +1,86 @@
+ion-content .chatMsg {
+  font-size: 14px;
+  margin: 0px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 80%;
+  padding: 12px 12px 25px 12px;
+  clear: both;
+  border-radius: 10px;
+  position: relative;
+}
+
+ion-content .msgTime {
+  font-size: 10px;
+  color: #646464;
+  margin: 5px 0px 12px 20px;
+}
+
+ion-content .msgTime ion-icon {
+  font-size: 15px;
+  position: absolute;
+  bottom: 10px;
+  right: 3em;
+}
+
+ion-content .incomingMsg {
+  margin-bottom: 10px;
+}
+
+ion-content .incomingMsg .chatMsg {
+  background-color: #f7f7f7;
+  color: var(--ion-color-dark);
+}
+
+ion-content .incomingMsg img {
+  width: 100%;
+  height: 100%;
+}
+
+ion-content .outgoingMsg {
+  margin-bottom: 10px;
+  display: flow-root;
+}
+
+ion-content .outgoingMsg .chatMsg {
+  float: right;
+  background: linear-gradient(92.89deg, #ff714d -9.4%, #ff4244 111.54%);
+  color: #ffffff;
+  padding: 12px 12px 0;
+}
+
+ion-content .outgoingMsg .msgTime {
+  float: right;
+  color: #f7f7f7;
+}
+
+ion-content .outgoingMsg img {
+  width: 100%;
+  height: 100%;
+}
+
+ion-footer ion-item {
+  border-radius: 30px !important;
+  border: 1px solid #f1f1f1 !important;
+}
+
+ion-footer ion-item .slotedStart {
+  margin-right: 10px !important;
+}
+
+ion-footer ion-item .slotedEnd {
+  margin-left: 10px !important;
+}
+
+.selected {
+  background: #D3D3D3 !important;
+}
+
+.likeButtons {
+  position: absolute;
+  top: 9px;
+  right: 49px;
+  --background: #f7f7f7;
+}
+/*# sourceMappingURL=chat-screen.page.css.map */

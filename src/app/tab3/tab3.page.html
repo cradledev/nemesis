@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>stories</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="addStory()" color="lighter">
+                <ion-icon name="add-circle-outline" slot="icon-only"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-row style="padding: 10px;">
+        <ion-col (click)="openStoryViewer(i)" *ngFor="let story of stories; index as i" size="{{i%3==0? 12: 6}}">
+            <div class="storyItem rounded">
+                <video class="videoItem" [poster]="story.url" playsinline preload="auto">
+                    <source [src]="story.url">      
+                </video>
+                <ion-item class="ion-no-padding bg-none" lines="none">
+                    <ion-avatar slot="start">
+                        <img [src]="service.usersData[story.uid].profileUrl">
+                    </ion-avatar>
+                    <ion-label>
+                        <h5>{{service.usersData[story.uid].fullName}}</h5>
+                        <p><small>{{story.timestamp | date:'mediumDate'}}</small></p>
+                    </ion-label>
+                </ion-item>
+            </div>
+        </ion-col>
+    </ion-row>
+    <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+        <ion-fab-button (click)="openTextModal()">
+            <ion-icon name="pencil-outline"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+</ion-content>

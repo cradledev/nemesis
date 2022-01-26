@@ -1,0 +1,69 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>signup</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="ion-padding bgGradient">
+
+    <div class="ion-text-center white mt-3 mb-2">
+        <img src="./assets/imgs/Logo.png">
+        <h2>Join Us!</h2>
+        <p class="mt-0">Create your account</p>
+    </div>
+
+    <div [formGroup]="onRegisterForm">
+        <p class="appTxt white mb-0">USER NAME</p>
+        <ion-item class="loginInputs bg-none rounded" lines="none">
+            <ion-input class="white" type="text" formControlName="fullName" placeholder="user name"></ion-input>
+        </ion-item>
+        <p class="errorMsg" *ngIf="onRegisterForm.get('fullName').hasError('required') && 
+        (onRegisterForm.get('fullName').dirty || onRegisterForm.get('fullName').touched)">
+            This field is required
+        </p>
+
+        <p class="appTxt white mb-0">E-MAIL</p>
+        <ion-item class="loginInputs bg-none rounded" lines="none">
+            <ion-input class="white" type="email" formControlName="email" placeholder="Email address"></ion-input>
+        </ion-item>
+        <p class="errorMsg" *ngIf="onRegisterForm.get('email').hasError('required') && 
+        (onRegisterForm.get('email').dirty || onRegisterForm.get('email').touched)">
+            This field is required
+        </p>
+
+        <p class="appTxt white mb-0">PHONE NUMBER</p>
+        <ion-item class="loginInputs bg-none rounded" lines="none">
+            <ion-input class="white" type="tel" formControlName="phone" placeholder="Phone number"></ion-input>
+        </ion-item>
+        <p class="errorMsg" *ngIf="onRegisterForm.get('phone').hasError('required') && 
+        (onRegisterForm.get('phone').dirty || onRegisterForm.get('phone').touched)">
+            This field is required
+        </p>
+
+        <p class="appTxt white mb-0">PASSWORD</p>
+        <ion-item class="loginInputs bg-none rounded" lines="none">
+            <ion-input class="white" type="password" formControlName="password" placeholder="Password"></ion-input>
+        </ion-item>
+        <p class="errorMsg" *ngIf="onRegisterForm.get('password').hasError('required') && 
+        (onRegisterForm.get('password').dirty || onRegisterForm.get('password').touched)">
+            This field is required
+        </p>
+
+        <p class="appTxt white mb-0">CONFIRM PASSWORD</p>
+        <ion-item class="loginInputs bg-none rounded" lines="none">
+            <ion-input class="white" type="password" formControlName="cPassword" placeholder="Re-enter password"></ion-input>
+        </ion-item>
+        <p class="errorMsg" *ngIf="onRegisterForm.get('cPassword').hasError('required') && 
+        (onRegisterForm.get('cPassword').dirty || onRegisterForm.get('cPassword').touched)">
+            This field is required
+        </p>
+
+        <ion-button routerDirection="root" expand="block" color="lighter" class="rounded h-50 mt-1" [disabled]="!onRegisterForm.value.fullName || !onRegisterForm.value.email ||
+        !onRegisterForm.value.password || !onRegisterForm.value.cPassword" (click)="createAccount(onRegisterForm.value)">Signup
+        </ion-button>
+        <ion-button routerLink="/login" routerDirection="back" fill="clear" expand="block" color="lighter" class=" h-50">
+            Already have an account? Login
+        </ion-button>
+    </div>
+
+</ion-content>

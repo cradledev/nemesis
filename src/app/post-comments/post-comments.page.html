@@ -1,0 +1,126 @@
+<ion-header class="gradientHeader">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>comments</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullScreen="true" color="lighter">
+
+    <ion-row *ngFor="let comment of allComments; index as i" class="mainComment">
+        <ion-col size="2" class="ion-text-center">
+            <img class="userAvatar" [src]="service.usersData[comment.uid].profileUrl">
+        </ion-col>
+        <ion-col size="10">
+            <ion-item lines="none" class="ion-no-padding">
+                <ion-label class="ion-text-wrap">
+                    <h2 class="dark fw500">{{service.usersData[comment.uid].fullName}} <small class="gray">&nbsp; {{comment.commentTimestamp}}</small></h2>
+                    <p class="gray" *ngIf="comment.comment">{{comment.comment}}</p>
+                    <img *ngIf="comment.commentsImages" [src]="comment.commentsImages">
+                    <video controls class="w-100" *ngIf="comment.commentsVideos" (playing)="onPlayingVideo($event)" #player playsinline preload="auto" [poster]="comment.commentsVideos" height="240" style="object-fit: cover !important;">
+                        <source [src]="comment.commentsVideos" type="video/mp4">
+                    </video>
+                </ion-label>
+            </ion-item>
+            <span *ngIf="comment.likes; else elseTag">
+                <img src="../../assets/imgs/liked.png" (click)="toLike(comment,i)" *ngIf="comment.likes?.includes(this.uid)" >
+                <img src="../../assets/imgs/like.png" (click)="toLike(comment,i)" *ngIf="!comment.likes?.includes(this.uid)" >{{comment.likes.length}}
+            </span>
+
+            <ng-template #elseTag>
+                <img src="../../assets/imgs/like.png" (click)="toLike(comment,i)">
+            </ng-template>
+
+
+            <span *ngIf="comment.dislikes; else elseTagDislike">
+                <img src="../../assets/imgs/dislike.png" style="margin-left: 10px;" (click)="toDislike(comment,i)" *ngIf="comment.dislikes?.includes(this.uid)" >
+                <img src="../../assets/imgs/dislike.png" style="margin-left: 10px;" (click)="toDislike(comment,i)" *ngIf="!comment.dislikes?.includes(this.uid)" >{{comment.dislikes.length}}
+            </span>
+
+            <ng-template #elseTagDislike>
+                <img src="../../assets/imgs/dislike.png" style="margin-left: 10px;" (click)="toDislike(comment,i)">
+
+            </ng-template>
+
+            <ion-button fill="clear" color="medium" size="small" class="ion-margin-right" (click)="toCommentIndex(i)">
+                REPLY
+            </ion-button>
+            <p *ngIf="comment.replies" (click)="comment.showReplies=!comment.showReplies" class="appTxt dark bold mb-0">
+                <span *ngIf="!comment.showReplies">- View {{comment.replies.length}} replies</span>
+                <span *ngIf="comment.showReplies">- Hide {{comment.replies.length}} replies</span>
+            </p>
+            <div *ngIf="comment.showReplies">
+                <div *ngFor="let reply of comment.replies; index as j" class="mainComment">
+                    <ion-item lines="none" class="ion-no-padding">
+                        <ion-label class="ion-text-wrap">
+                            <h2 class="dark fw500">{{service.usersData[reply.uid].fullName}} <small class="gray">&nbsp; {{reply.commentTimestamp}}</small></h2>
+                            <p class="gray" *ngIf="reply.comment">{{reply.comment}}</p>
+                            <img *ngIf="reply.commentsImages" [src]="reply.commentsImages">
+                            <video controls class="w-100" *ngIf="reply.commentsVideos" (playing)="onPlayingVideo($event)" #player playsinline preload="auto" [poster]="comment.commentsVideos" height="240" style="object-fit: cover !important;">
+                                <source [src]="reply.commentsVideos" type="video/mp4">
+                            </video>
+                        </ion-label>
+                    </ion-item>
+                    <span *ngIf="reply.likes; else elseTagReply">
+                        <img src="../../assets/imgs/liked.png" (click)="toLikeReply(reply,j,i)" *ngIf="reply.likes?.includes(this.uid)" >
+                        <img src="../../assets/imgs/like.png" (click)="toLikeReply(reply,j,i)" *ngIf="!reply.likes?.includes(this.uid)" >{{reply.likes.length}}
+                    </span>
+
+                    <ng-template #elseTagReply>
+                        <img src="../../assets/imgs/like.png" (click)="toLikeReply(reply,j,i)">
+                    </ng-template>
+
+
+                    <span *ngIf="reply.dislikes; else elseTagDislikeReply">
+                        <img src="../../assets/imgs/dislike.png" style="margin-left: 10px;" (click)="toDislikeReply(reply,j,i)" *ngIf="reply.dislikes?.includes(this.uid)" >
+                        <img src="../../assets/imgs/dislike.png" style="margin-left: 10px;" (click)="toDislikeReply(reply,j,i)" *ngIf="!reply.dislikes?.includes(this.uid)" >{{reply.dislikes.length}}
+                    </span>
+
+                    <ng-template #elseTagDislikeReply>
+                        <img src="../../assets/imgs/dislike.png" style="margin-left: 10px;" (click)="toDislikeReply(reply,j,i)">
+
+                    </ng-template>
+                    <ion-button fill="clear" color="medium" size="small" class="ion-margin-right" (click)="toCommentIndex(i)">
+                        REPLY
+                    </ion-button>
+                </div>
+            </div>
+        </ion-col>
+    </ion-row>
+
+</ion-content>
+
+
+<ion-footer>
+    <input id="galleryMedia" style="display: none;" type="file" accept="image/jpeg, image/png, video/mp4" (change)="onChangeFileGallery($event)">
+    <ion-row class="bg-white" style="padding: 10px;">
+        <ion-col size="2" class="ion-text-center">
+            <img src="./assets/imgs/Video.png" (click)="toGalleryMedia()">
+        </ion-col>
+        <ion-col size="7">
+            <ion-item lines="none">
+                <ion-input type="text" [(ngModel)]="comment" (keyup.enter)="sendComment()" placeholder="Write a comment...">
+                </ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="3" style="margin-top: 12px;">
+            <ion-icon name="send" *ngIf="comment" color="primary" style="font-size: 18px;" (click)="sendComment()"></ion-icon>
+            <img class="slotedEnd" *ngIf="!comment" src="/assets/imgs/GIF.png" routerLink="/gif">
+            <img class="slotedEnd" src="/assets/imgs/smile 1.png" (click)="toggled = !toggled" [(emojiPickerIf)]="toggled" [emojiPickerDirection]="'top'" (emojiPickerSelect)="handleSelection($event)">
+        </ion-col>
+    </ion-row>
+</ion-footer>
+
+
+<!-- <div *ngIf="showGif" class="popupModal">
+    <div class="innerDiv ion-text-center">
+        <ion-icon size="large" (click)="showGif=false" name="close" color="primary"></ion-icon>
+        <ion-row>
+            <ion-col size="6" *ngFor="let gif of gifs" (click)="sendComment(gif.images.downsized.url)">
+                <img [src]="gif.images.downsized.url">
+            </ion-col>
+        </ion-row>
+    </div>
+</div> -->

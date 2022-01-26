@@ -1,0 +1,115 @@
+ion-content {
+    ion-segment-button {
+        font-size: small;
+    }
+
+    .musicList {
+        .anItem {
+            margin-bottom: 5px;
+
+            img {
+                width: 100%;
+                height: 180px;
+                border-radius: 10px 10px 0 0;
+                object-fit: cover;
+                margin-bottom: 5px;
+            }
+        }
+        .chartItem {
+            margin-bottom: 5px;
+
+            img {
+                width: 100%;
+                height: 120px;
+                border-radius: 10px;
+                object-fit: cover;
+            }
+            span {
+                width: 26px;
+                height: 26px;
+                background: #ffffff;
+                border-radius: 50%;
+                position: absolute;
+                right: 1em;
+                bottom: 1.5em;
+                text-align: center;
+                padding-top: 5px;
+            }
+        }
+    }
+    .listItems {
+        ion-avatar {
+            padding: 12px;
+            width: 50px;
+            height: 50px;
+            background: #f1f1f1;
+            border-radius: 7px;
+        }
+    }
+    .newList {
+        --padding-start: 10px !important;
+
+        ion-avatar {
+            border-radius: 6px;
+            width: 50px;
+            height: 50px;
+            padding: 8px;
+            background: linear-gradient(108.46deg, #ff714d21 -9.4%, #ff424523 111.54%) !important;
+
+            img {
+                object-fit: contain;
+            }
+        }
+    }
+    .playList {
+        --padding-start: 10px !important;
+
+        ion-avatar {
+            width: 50px;
+            height: 50px;
+
+            img {
+                border-radius: 6px;
+            }
+        }
+    }
+}
+
+ion-footer {
+    border-radius: 20px 20px 0 0;
+    padding: 20px 10px 0 10px;
+    background: linear-gradient(92.89deg, #ff714d -9.4%, #ff4244 111.54%) !important;
+
+    ion-item {
+        --inner-padding-end: 0 !important;
+
+        p {
+            margin-left: 0;
+
+            ion-icon {
+                font-size: 32px;
+                margin: 0 5px;
+                color: var(--ion-color-lighter);
+            }
+            .playIcon {
+                font-size: 36px;
+            }
+        }
+    }
+
+    img {
+        width: 100%;
+        height: 70px;
+        object-fit: cover;
+    }
+    .rangebarTime {
+        margin: -1em 0 0 0;
+    }
+    ion-range {
+        padding: 0 0 0 5px;
+        margin-top: -1em;
+
+        --bar-background: var(--ion-color-lighter) !important;
+        --bar-background-active: var(--ion-color-tertiary) !important;
+    }
+}

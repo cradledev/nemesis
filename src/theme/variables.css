@@ -1,0 +1,178 @@
+/** Ionic CSS Variables **/
+:root {
+  /** primary **/
+  --ion-color-primary: #ff4244;
+  --ion-color-primary-rgb: 255, 66, 68;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #e03a3c;
+  --ion-color-primary-tint: #ff5557;
+  /** secondary **/
+  --ion-color-secondary: #ff714d;
+  --ion-color-secondary-rgb: 255, 113, 77;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #e06344;
+  --ion-color-secondary-tint: #ff7f5f;
+  /** tertiary **/
+  --ion-color-tertiary: #5260ff;
+  --ion-color-tertiary-rgb: 82, 96, 255;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #4854e0;
+  --ion-color-tertiary-tint: #6370ff;
+  /** success **/
+  --ion-color-success: #2dd36f;
+  --ion-color-success-rgb: 45, 211, 111;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #28ba62;
+  --ion-color-success-tint: #42d77d;
+  /** warning **/
+  --ion-color-warning: #ffc409;
+  --ion-color-warning-rgb: 255, 196, 9;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+  --ion-color-warning-shade: #e0ac08;
+  --ion-color-warning-tint: #ffca22;
+  /** danger **/
+  --ion-color-danger: #eb445a;
+  --ion-color-danger-rgb: 235, 68, 90;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #cf3c4f;
+  --ion-color-danger-tint: #ed576b;
+  /** dark **/
+  --ion-color-dark: #222428;
+  --ion-color-dark-rgb: 34, 36, 40;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255, 255, 255;
+  --ion-color-dark-shade: #1e2023;
+  --ion-color-dark-tint: #383a3e;
+  /** medium **/
+  --ion-color-medium: #92949c;
+  --ion-color-medium-rgb: 146, 148, 156;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255, 255, 255;
+  --ion-color-medium-shade: #808289;
+  --ion-color-medium-tint: #9d9fa6;
+  /* light */
+  --ion-color-light: #fafafa;
+  --ion-color-light-rgb: 255, 255, 255;
+  --ion-color-light-contrast: #000000;
+  --ion-color-light-contrast-rgb: 0, 0, 0;
+  --ion-color-light-shade: #f1f1f1;
+  --ion-color-light-tint: #f5f5f5;
+  /* lighter */
+  --ion-color-lighter: #ffffff;
+  --ion-color-lighter-rgb: 255, 255, 255;
+  --ion-color-lighter-contrast: #ff4244;
+  --ion-color-lighter-contrast-rgb: 0, 0, 0;
+  --ion-color-lighter-shade: #e0e0e0;
+  --ion-color-lighter-tint: #f9f9f9;
+}
+
+:root .primary {
+  color: var(--ion-color-primary);
+}
+
+:root .secondary {
+  color: var(--ion-color-secondary);
+}
+
+:root .tertiary {
+  color: var(--ion-color-tertiary);
+}
+
+:root .success {
+  color: var(--ion-color-success) !important;
+}
+
+:root .warning {
+  color: var(--ion-color-warning);
+}
+
+:root .gray {
+  color: var(--ion-color-medium) !important;
+}
+
+:root .dark {
+  color: var(--ion-color-dark);
+}
+
+:root .light {
+  color: var(--ion-color-light);
+}
+
+:root .danger {
+  color: var(--ion-color-danger) !important;
+}
+
+:root .white {
+  color: var(--ion-color-lighter);
+}
+
+:root .bg-white {
+  background-color: var(--ion-color-lighter);
+}
+
+:root .bg-primary {
+  background-color: var(--ion-color-primary);
+  --background: var(--ion-color-primary);
+}
+
+:root .bg-secondary {
+  background-color: var(--ion-color-secondary);
+  --background: var(--ion-color-secondary);
+}
+
+:root .bg-light {
+  background-color: var(--ion-color-light);
+  --background: var(--ion-color-light);
+}
+
+:root .bg-gray {
+  background-color: var(--ion-color-medium);
+  --background: var(--ion-color-medium);
+}
+
+:root .bg-dark {
+  background-color: var(--ion-color-dark);
+  --background: var(--ion-color-dark);
+}
+
+:root ion-header {
+  --ion-toolbar-background: transparent !important;
+  background: linear-gradient(92.89deg, #ff714d -9.4%, #ff4244 111.54%) !important;
+}
+
+:root ion-header ion-title {
+  text-transform: capitalize;
+}
+
+:root ion-header ion-back-button,
+:root ion-header ion-menu-button,
+:root ion-header ion-title,
+:root ion-header ion-button {
+  color: var(--ion-color-lighter) !important;
+}
+
+:root ion-header.gradientHeader {
+  background-image: url("/assets/imgs/bgShapes.png"), linear-gradient(92.89deg, #ff714d -9.4%, #ff4244 111.54%) !important;
+  border-radius: 0 0 20px 20px !important;
+}
+
+:root ion-content {
+  --background: var(--ion-color-light) !important;
+}
+
+:root .bgGradient {
+  background: linear-gradient(92.89deg, #ff714d -9.4%, #ff4244 111.54%) !important;
+  --background: linear-gradient(92.89deg, #ff714d -9.4%, #ff4244 111.54%) !important;
+}
+
+:root .header-md::after,
+:root .footer-md::before {
+  background-image: none !important;
+}
+/*# sourceMappingURL=variables.css.map */

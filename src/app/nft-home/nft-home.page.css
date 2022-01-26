@@ -1,0 +1,264 @@
+ion-header ion-toolbar {
+  --min-height: 65px;
+  --border-width: 0px;
+}
+
+ion-content {
+  --padding-bottom: 25px !important;
+}
+
+ion-content .filterBtnsCont {
+  overflow-x: scroll;
+  white-space: nowrap;
+  padding: 5px 0px 0px 0px;
+}
+
+ion-content .filterBtnsCont .filterBtn {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 80px;
+  height: 50px;
+  padding: 5px 15px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #8D8D8D;
+  border-bottom: 2px solid #EAEAEA;
+}
+
+ion-content .filterBtnsCont .filterBtn.active {
+  border-bottom-color: var(--ion-color-primary);
+  color: var(--ion-color-primary);
+}
+
+ion-content .headingCont {
+  margin: 25px 17px 20px 17px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+ion-content .headingCont h3 {
+  margin: 0px;
+  font-weight: bold;
+}
+
+ion-content .headingCont .sortBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #E3E3E3;
+  height: 42px;
+  border-radius: 30px;
+  padding: 5px 18px;
+  color: black;
+}
+
+ion-content .headingCont .sortBtn img {
+  margin-right: 10px;
+}
+
+ion-content .horizontalScroll {
+  overflow-x: scroll;
+  white-space: nowrap;
+  padding: 0px 8px 0px 3px;
+}
+
+ion-content .horizontalScroll .silderCont {
+  display: inline-block;
+  width: 60%;
+  vertical-align: top;
+  margin-left: 14px;
+}
+
+ion-content .horizontalScroll .silderCont .slideImg {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #F0F0F0;
+  vertical-align: middle;
+  height: 60vw;
+}
+
+ion-content .horizontalScroll .silderCont .nftImgCont {
+  height: 60vw;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #F0F0F0;
+  background: white;
+  text-align: center;
+  padding: 17px;
+}
+
+ion-content .horizontalScroll .silderCont .nftImgCont img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 7px;
+}
+
+ion-content .horizontalScroll .silderCont .txtCont {
+  padding: 17px 7px;
+  white-space: normal;
+  width: 100%;
+}
+
+ion-content .horizontalScroll .silderCont .txtCont .ratingCont {
+  margin: 6px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+ion-content .horizontalScroll .silderCont .txtCont .ratingCont h5 {
+  font-size: 16px;
+}
+
+ion-content .horizontalScroll .silderCont .txtCont .ratingCont .result {
+  color: var(--ion-color-medium);
+  margin: 0px;
+  font-size: 15px;
+}
+
+ion-content .createBtn {
+  margin: 0px 17px;
+  height: 58px;
+  border-radius: 10px;
+  --border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: normal !important;
+  --ion-color-base: #ffeded !important;
+  --ion-color-contrast: var(--ion-color-primary) !important;
+  --ion-color-shade: #ffeded !important;
+  --box-shadow: none !important;
+}
+
+ion-content .nftCont {
+  border: 1px solid #DFDFDF;
+  border-radius: 12px;
+  min-height: 70vw;
+  padding: 15px;
+  margin: 15px 17px 0px 17px;
+  background: white;
+}
+
+ion-content .nftCont .topHeading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+ion-content .nftCont .topHeading .optBtn {
+  font-size: 24px;
+  color: #8D8D8D;
+}
+
+ion-content .nftCont .userimgsCont {
+  width: 80%;
+}
+
+ion-content .nftCont .userimgsCont .userImg {
+  height: 32px;
+  width: 32px;
+  border: 1px solid white;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  margin: 0px 0px 0px -13px;
+}
+
+ion-content .nftCont .userimgsCont .userImg:first-child {
+  margin: 0px !important;
+}
+
+ion-content .nftCont .nftImg {
+  width: 100%;
+  height: 77vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+  margin: 18px 0px;
+  vertical-align: middle;
+}
+
+ion-content .nftCont .detailsCont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+ion-content .nftCont .detailsCont .details {
+  width: 80%;
+}
+
+ion-content .nftCont .detailsCont .details .ratingCont {
+  margin: 6px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+ion-content .nftCont .detailsCont .details .ratingCont h5 {
+  font-size: 16px;
+}
+
+ion-content .nftCont .detailsCont .details .ratingCont .result {
+  color: var(--ion-color-medium);
+  margin: 0px;
+  font-size: 15px;
+}
+
+ion-content .nftCont .detailsCont .wishBtn {
+  font-size: 28px;
+  color: #8D8D8D;
+  margin-bottom: 10px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+::-webkit-scrollbar {
+  display: none !important;
+}
+/*# sourceMappingURL=nft-home.page.css.map */

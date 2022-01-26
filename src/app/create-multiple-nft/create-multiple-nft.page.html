@@ -1,0 +1,85 @@
+<ion-header class="gradientHeader">
+    <ion-toolbar mode="ios">
+        <ion-buttons slot="start">
+            <ion-back-button mode="md"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Create Multiple</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-row class="ion-justify-content-center">
+        <ion-col size="11" class="ion-no-padding">
+            <h3 class="bold">Create multiple collectible</h3>
+            <p class="bold mt-2">Upload File</p>
+            <div class="filePickerCont">
+                <div class="txt">
+                    <p class="fileDesp">PNG, GIF, WEBP, MP4 or MP3. Max 30mb.</p>
+                    <ion-button shape="round" color="primary" class="createBtn">Choose File</ion-button>
+                </div>
+            </div>
+            <ion-item lines="none" class="toggleCont ion-no-padding">
+                <ion-label class="ion-text-wrap">
+                    <p>Put on sale</p>
+                    <p class="gray">You’ll receive bids on this item</p>
+                </ion-label>
+                <ion-toggle mode="ios" slot="end" checked></ion-toggle>
+            </ion-item>
+            <ion-item lines="none" class="toggleCont ion-no-padding">
+                <ion-label class="ion-text-wrap">
+                    <p>Instant sale price</p>
+                    <p class="gray">Enter the price for which the item will be instantly sold</p>
+                </ion-label>
+                <ion-toggle mode="ios" slot="end"></ion-toggle>
+            </ion-item>
+            <ion-item lines="none" class="toggleCont ion-no-padding">
+                <ion-label class="ion-text-wrap">
+                    <p>Unlock once purchased</p>
+                    <p class="gray">Content will be unlocked after successful transaction</p>
+                </ion-label>
+                <ion-toggle mode="ios" slot="end"></ion-toggle>
+            </ion-item>
+            <p class="bold mt-2">Choose collection</p>
+            <ion-row>
+                <ion-col size="6" class="pl-0">
+                    <div class="filePickerCont colPicker">
+                        <div class="txt">
+                            <ion-icon name="add"></ion-icon>
+                            <p class="my-0 bold">Create</p>
+                            <p class="desp gray">ERC-721</p>
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <p class="inputTitle">Name</p>
+            <ion-item lines="none" class="inputCont">
+                <ion-input type="text" placeholder="e.g Majed T-Shirt"></ion-input>
+            </ion-item>
+            <p class="inputTitle">Description <span class="appTxt gray">(Optional)</span></p>
+            <ion-item lines="none" class="inputCont">
+                <ion-input type="text" placeholder="e.g Majed T-Shirt"></ion-input>
+            </ion-item>
+            <p class="gray inputDesp">With preserved line-breaks</p>
+            <p class="inputTitle">Royalties</p>
+            <ion-item lines="none" class="inputCont">
+                <ion-input type="number" placeholder="10"></ion-input>
+                <p class="unit" slot="end">%</p>
+            </ion-item>
+            <p class="gray inputDesp">Suggested: 10%, 20%, 30%</p>
+            <p class="inputTitle">Properties <span class="appTxt gray">(Optional)</span></p>
+            <ion-item lines="none" class="inputCont">
+                <ion-input type="text" placeholder="e.g Size"></ion-input>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-row class="ion-justify-content-center">
+            <ion-col size="11" class="ion-no-padding">
+                <ion-button routerLink="/connect-wallet" color="primary" expand="block" class="submitBtn">Create Now</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-toolbar>
+</ion-footer>

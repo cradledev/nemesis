@@ -1,0 +1,130 @@
+ion-header {
+    background-image: url("/assets/imgs/Bg Shapes (1).png"), linear-gradient(92.89deg, #ff714d -9.4%, #ff4244 111.54%) !important;
+    background-repeat: no-repeat !important;
+    ion-slides {
+        padding: 1em 0 2em 0;
+    }
+    .overlayCurve {
+        width: 100%;
+        margin-top: -2em;
+        height: 60px;
+        margin-bottom: -1em;
+    }
+    .userInfo {
+        ion-col {
+            padding: 0;
+            .userImg {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 5px solid #ffffff;
+            }
+            p {
+                width: 80px;
+                height: 80px;
+                display: inline-block;
+                border-radius: 50%;
+                padding-top: 1.6em;
+                box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.25);
+                &.pt-5 {
+                    padding-top: 2.5em;
+                }
+            }
+        }
+    }
+}
+
+ion-content {
+    .segmentContainer {
+        padding: 0 10px;
+        border-top: 1px solid #dedede;
+        border-bottom: 1px solid #dedede;
+        ion-segment-button {
+            text-transform: none !important;
+        }
+    }
+    ion-slides {
+        padding: 10px;
+        .anItem {
+            width: 140px;
+            position: relative;
+            padding-bottom: 0;
+            .mainImg {
+                width: 100%;
+                height: 135px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+            .absoluteIcon {
+                width: 25px;
+                position: absolute;
+                right: 12px;
+                top: 12px;
+            }
+            p {
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+                left: 1em;
+                text-align: left;
+                img {
+                    width: 14px;
+                }
+            }
+        }
+    }
+}
+
+.suggestedSlide {
+    padding: 10px;
+    .suggestedBox {
+        background-color: #ffffff;
+        width: 140px;
+        height: 180px;
+        position: relative;
+        border: 1px solid #E5E5E5;
+        box-sizing: border-box;
+        border-radius: 20px;
+        box-shadow: 0px 4px 54px rgba(0, 0, 0, 0.05);
+        .userImg {
+            width: 50px;
+            height: 50px;
+            top: 30px;
+            position: absolute;
+            right: 43px;
+        }
+        .crossIcon {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+        h5 {
+            font-size: 12px;
+            position: absolute;
+            top: 65px;
+            padding: 8px 20px 8px 30px;
+        }
+        p {
+            position: absolute;
+            font-size: 10px;
+            padding: 19px 20px 20px 33px;
+            top: 75px;
+        }
+        .followBtn {
+            position: absolute;
+            top: 120px;
+            color: white;
+            --padding-bottom: 0px;
+            --padding-top: 0px;
+            --padding-start: 25px;
+            --padding-end: 25px;
+            left: 20px;
+        }
+    }
+}
+
+.btnColor {
+    --background: #07B9FF !important;
+    --color: var(--ion-color-lighter) !important;
+}

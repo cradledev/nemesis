@@ -1,0 +1,26 @@
+ion-tab-bar {
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+    ion-tab-button {
+        background: transparent !important;
+        img {
+            opacity: 0.6;
+        }
+        &.middleTab {
+            img {
+                background: #ffffff;
+                padding: 10px;
+                border-radius: 50%;
+                object-fit: contain;
+                width: 50px;
+                height: 50px;
+                opacity: 1;
+            }
+        }
+    }
+    .tab-selected {
+        img {
+            opacity: 1;
+        }
+    }
+}

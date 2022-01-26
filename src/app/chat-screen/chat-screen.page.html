@@ -1,0 +1,137 @@
+<ion-header class="gradientHeader">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            <ion-item class="ion-no-padding bg-none" lines="none">
+                <ion-label (click)="toOtherProfile()">
+                    <h5 class="white">{{service.usersData[otherUid].fullName}}</h5>
+                    <p class="white"><small>last seen today at 2:45</small></p>
+                </ion-label>
+            </ion-item>
+        </ion-title>
+        <ion-buttons slot="end" *ngIf="!isBlocked">
+            <ion-button (click)="addToFavorite()" *ngIf="!service.usersData[uid].favorites?.includes(this.otherUid)">
+                <img src="./assets/imgs/star 1.png">
+            </ion-button>
+            <ion-button (click)="removeFromFavorite()" *ngIf="service.usersData[uid].favorites?.includes(this.otherUid)">
+                <ion-icon name="star" color="light"></ion-icon>
+            </ion-button>
+            <ion-button>
+                <img src="./assets/imgs/flag 1.png">
+            </ion-button>
+            <ion-button>
+                <img src="./assets/imgs/slash 1.png" (click)="presentAlertConfirm()">
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content #content color="lighter" class="ion-padding" fullScreen="true">
+    <div *ngFor="let chat of chats; let i = index;" style="position: relative;">
+        <div [class.outgoingMsg]="chat.senderId === uid" [class.incomingMsg]="chat.senderId !== uid">
+            <p class="chatMsg" [class.selected]="chat.selected" (click)="toSelect(chat)">
+                <span *ngIf="chat.message">{{chat.message}}</span>
+
+                <img *ngIf="chat.image" (click)="viewImage(chat.image)" [src]="chat.image" [class.ion-float-right]="chat.senderId==uid">
+                <br /> <span class="msgTime" [class.ion-float-right]="chat.senderId==uid">{{chat.timestamp | date:'medium'}}</span>
+            </p>
+            <img *ngIf="chat.liked" src="../../assets/imgs/Like 2.png" style="position: absolute;
+            width: 20px;
+            height: 20px;
+            left: 140px;
+            top: 60px;">
+            <img *ngIf="chat.liked==false" src="../../assets/imgs/Dislike 2.png" style="position: absolute;
+            width: 20px;
+            height: 20px;
+            left: 140px;
+            top: 60px;">
+            <ion-button *ngIf="chat.selected" class="likeButtons">
+                <img src="../../assets/imgs/like.png" style="height: 25px;border-right:1px solid #000; margin: 10px; padding-right: 10px; padding-left: 10px;" (click)="toLike(chat)">
+                <img src="../../assets/imgs/dislike.png" style="height: 25px;" (click)="toDislike(chat)">
+            </ion-button>
+
+
+
+        </div>
+    </div>
+
+    <!-- <div class="incomingMsg">
+        <p class="chatMsg">Ok look i like this work
+            <br /> <span class="ion-float-right msgTime">02:34</span>
+        </p>
+    </div>
+
+    <div class="outgoingMsg">
+        <p class="chatMsg">Thanks men
+            <br /> <span class="msgTime"><ion-icon name="checkmark-done-outline"></ion-icon> 02:34</span>
+        </p>
+    </div>
+
+    <div class="outgoingMsg">
+        <p class="chatMsg">information; workshops are for solving a problem or reaching an actionable goal.
+            <br /> <span class="msgTime"><ion-icon name="checkmark-done-outline"></ion-icon> 02:34</span>
+        </p>
+    </div>
+
+    <div class="outgoingMsg">
+        <p class="chatMsg">Now do this
+            <br /> <span class="msgTime"><ion-icon name="checkmark-done-outline"></ion-icon> 02:34</span>
+        </p>
+    </div>
+
+    <div class="incomingMsg">
+        <p class="chatMsg">I'm doing a complicated form for this my self this will be in admin panel, at customer side
+            <br /> <span class="ion-float-right msgTime">02:34</span>
+        </p>
+    </div>
+
+    <div class="incomingMsg">
+        <p class="chatMsg">Ok look i like this work
+            <br /> <span class="ion-float-right msgTime">02:34</span>
+        </p>
+    </div>
+
+    <div class="outgoingMsg">
+        <p class="chatMsg">Thanks men
+            <br /> <span class="msgTime"><ion-icon name="checkmark-done-outline"></ion-icon> 02:34</span>
+        </p>
+    </div>
+
+    <div class="outgoingMsg">
+        <p class="chatMsg">information; workshops are for solving a problem or reaching an actionable goal.
+            <br /> <span class="msgTime"><ion-icon name="checkmark-done-outline"></ion-icon> 02:34</span>
+        </p>
+    </div>
+
+    <div class="outgoingMsg">
+        <p class="chatMsg">Now do this
+            <br /> <span class="msgTime"><ion-icon name="checkmark-done-outline"></ion-icon> 02:34</span>
+        </p>
+    </div> -->
+
+</ion-content>
+
+
+<ion-footer>
+    <div class="bg-white" style="padding: 10px;" *ngIf="!isBlocked">
+        <ion-item lines="none">
+            <img class="slotedStart" slot="start" src="./assets/imgs/Camera.png" (click)="openCamera(1)">
+            <ion-input typ="text" placeholder="Message" [(ngModel)]="newMessage.message" (keyup.enter)="sendMessage()">
+            </ion-input>
+            <!-- <img class="slotedEnd" src="/assets/imgs/Microphone.png" slot="end"> -->
+            <img class="slotedEnd" src="/assets/imgs/Image (12).png" slot="end" (click)="openCamera(2)">
+            <img class="slotedEnd" src="/assets/imgs/More.png" slot="end" (click)="openCamera(2)">
+        </ion-item>
+    </div>
+    <div class="bg-white" style="padding: 10px;" *ngIf="isBlocked">
+        <ion-item lines="none">
+            <p *ngIf="from" class="ion-text-center" (click)="toUblockPromot()">! You blocked this user.Tap to Unblock
+            </p>
+            <p *ngIf="!from" class="ion-text-center"> ! You have been blocked by {{this.service.usersData[this.otherUid].fullName}}. </p>
+        </ion-item>
+
+
+    </div>
+</ion-footer>

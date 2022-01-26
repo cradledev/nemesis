@@ -1,0 +1,29 @@
+ion-header .segmentBtns {
+  padding: 0 10px 10px 10px;
+}
+
+ion-header .segmentBtns ion-button.inactiveTab {
+  --background: rgba(255, 255, 255, 0.2) !important;
+  --box-shadow: none;
+}
+
+ion-header .segmentBtns ion-button.activeTab {
+  --background: #ffffff !important;
+  color: var(--ion-color-primary) !important;
+}
+
+ion-content .anItem .userAvatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 1px solid var(--ion-color-primary);
+}
+
+ion-content .anItem p img {
+  width: 15px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+/*# sourceMappingURL=nemesis.page.css.map */

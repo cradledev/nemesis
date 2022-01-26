@@ -1,0 +1,120 @@
+ion-header .segmentBtns {
+  padding: 0 10px 10px 10px;
+}
+
+ion-header .segmentBtns ion-button.inactiveTab {
+  --background: rgba(255, 255, 255, 0.2) !important;
+  --box-shadow: none;
+}
+
+ion-header .segmentBtns ion-button img {
+  -webkit-filter: brightness(100);
+          filter: brightness(100);
+}
+
+ion-header .segmentBtns ion-button.activeTab {
+  --background: #ffffff !important;
+  color: var(--ion-color-primary) !important;
+}
+
+ion-header .segmentBtns ion-button.activeTab img {
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+}
+
+ion-header .segmentBtns .leftBtn img {
+  margin-right: 8px;
+}
+
+ion-header .segmentBtns .rightBtn img {
+  margin-left: 8px;
+}
+
+.sign-up-button {
+  white-space: normal;
+}
+
+.createPostSheet {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.createPostSheet .innerContent {
+  border-radius: 16px 16px 0 0;
+  position: absolute;
+  width: 100%;
+  border: 1px solid var(--ion-color-primary);
+  bottom: 0;
+}
+
+.createPostSheet .innerContent .closeBar {
+  border-radius: 10px;
+  background: #e4e4e7;
+  border-radius: 10px;
+  color: #e4e4e7;
+  padding: 0 20px;
+  font-size: 4px;
+}
+
+.createPostSheet .innerContent ion-item img {
+  margin-right: 12px;
+}
+
+.imgPost {
+  width: 75px !important;
+  height: 75px !important;
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
+}
+
+.crossIcon {
+  position: absolute;
+  z-index: 9999;
+  top: 15px;
+  right: 6px;
+  color: red;
+}
+
+.comments {
+  border-radius: 30px !important;
+  border: 2px solid #f1f1f1 !important;
+}
+
+.comments .slotedStart {
+  margin-right: 10px !important;
+}
+
+.comments .slotedEnd {
+  margin-left: 10px !important;
+}
+
+ion-avatar {
+  padding: 2px;
+  margin-right: 6px;
+  border: 1px solid var(--ion-color-primary);
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 50px;
+  color: #fff;
+  text-align: center;
+  background: var(--ion-color-primary);
+  line-height: 50px;
+  font-size: 25px;
+}
+
+.postImage {
+  width: 50px !important;
+  height: 50px !important;
+  -o-object-fit: cover !important;
+     object-fit: cover !important;
+  border-radius: 50%;
+}
+/*# sourceMappingURL=debate-feature.page.css.map */

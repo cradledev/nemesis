@@ -1,0 +1,93 @@
+<ion-header class="gradientHeader">
+    <ion-toolbar mode="ios">
+        <ion-buttons slot="start">
+            <ion-back-button mode="md"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Connect Wallet</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-row class="ion-justify-content-center">
+        <ion-col size="11" class="ion-no-padding">
+            <h3 class="bold">Connect your wallet</h3>
+            <p class="desp">Connect with one of available wallet providers or create a new wallet. What is wallet?</p>
+            <ion-row>
+                <ion-col size="6" class="pl-0" style="padding-right: 8px;">
+                    <div (click)="showModal=true" class="connectWallet">
+                        <div class="txt">
+                            <img src="/assets/imgs/connectWallet1.png" class="optImg">
+                            <h5>Matamask</h5>
+                        </div>
+                    </div>
+                </ion-col>
+                <ion-col size="6" class="pr-0" style="padding-left: 8px;">
+                    <div (click)="showModal=true" class="connectWallet">
+                        <div class="txt">
+                            <img src="/assets/imgs/connectWallet2.png" class="optImg">
+                            <h5>WalletConnect</h5>
+                        </div>
+                    </div>
+                </ion-col>
+                <ion-col size="6" class="pl-0" style="padding-right: 8px;">
+                    <div (click)="showModal=true" class="connectWallet">
+                        <div class="txt">
+                            <img src="/assets/imgs/connectWallet3.png" class="optImg">
+                            <h5>Matamask</h5>
+                        </div>
+                    </div>
+                </ion-col>
+                <ion-col size="6" class="pr-0" style="padding-left: 8px;">
+                    <div (click)="showModal=true" class="connectWallet">
+                        <div class="txt">
+                            <div class="optImgCont">
+                                <img src="/assets/imgs/connectWallet4.png">
+                            </div>
+                            <h5>WalletConnect</h5>
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <p class="desp2">We do not own your private keys and cannot access your funds without your confirmation.</p>
+        </ion-col>
+    </ion-row>
+</ion-content>
+
+<div *ngIf="showModal" class="popupModal">
+    <div class="innerDiv">
+        <div class="heading">
+            <h3 class="bold my-0 dark">Follow Steps</h3>
+            <ion-icon (click)="showModal=false" name="close"></ion-icon>
+        </div>
+        <div class="checkBoxCont">
+            <div class="checkbox checked">
+                <img src="/assets/imgs/checkMark.svg">
+            </div>
+            <div class="details">
+                <h5 class="bold my-0 dark">Upload files</h5>
+                <p>Prepare files for minting</p>
+            </div>
+        </div>
+        <ion-button color="primary" expand="block" class="uploadBtn disabled">Upload files</ion-button>
+        <div class="checkBoxCont">
+            <div class="checkbox">
+                <img src="/assets/imgs/checkMark.svg">
+            </div>
+            <div class="details">
+                <h5 class="bold my-0 dark">Mini token</h5>
+                <p>Call contact method</p>
+            </div>
+        </div>
+        <ion-button color="primary" expand="block" class="uploadBtn">Mini Token</ion-button>
+        <div class="checkBoxCont">
+            <div class="checkbox">
+                <img src="/assets/imgs/checkMark.svg">
+            </div>
+            <div class="details">
+                <h5 class="bold my-0 dark">Sign sell order</h5>
+                <p>Sign sell order using your wallet</p>
+            </div>
+        </div>
+        <ion-button color="primary" expand="block" class="uploadBtn disabled">Sign sell order</ion-button>
+    </div>
+</div>

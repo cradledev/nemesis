@@ -1,0 +1,121 @@
+ion-content ion-segment-button {
+  font-size: small;
+}
+
+ion-content .musicList .anItem {
+  margin-bottom: 5px;
+}
+
+ion-content .musicList .anItem img {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px 10px 0 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 5px;
+}
+
+ion-content .musicList .chartItem {
+  margin-bottom: 5px;
+}
+
+ion-content .musicList .chartItem img {
+  width: 100%;
+  height: 120px;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+ion-content .musicList .chartItem span {
+  width: 26px;
+  height: 26px;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  right: 1em;
+  bottom: 1.5em;
+  text-align: center;
+  padding-top: 5px;
+}
+
+ion-content .listItems ion-avatar {
+  padding: 12px;
+  width: 50px;
+  height: 50px;
+  background: #f1f1f1;
+  border-radius: 7px;
+}
+
+ion-content .newList {
+  --padding-start: 10px !important;
+}
+
+ion-content .newList ion-avatar {
+  border-radius: 6px;
+  width: 50px;
+  height: 50px;
+  padding: 8px;
+  background: linear-gradient(108.46deg, #ff714d21 -9.4%, #ff424523 111.54%) !important;
+}
+
+ion-content .newList ion-avatar img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+ion-content .playList {
+  --padding-start: 10px !important;
+}
+
+ion-content .playList ion-avatar {
+  width: 50px;
+  height: 50px;
+}
+
+ion-content .playList ion-avatar img {
+  border-radius: 6px;
+}
+
+ion-footer {
+  border-radius: 20px 20px 0 0;
+  padding: 20px 10px 0 10px;
+  background: linear-gradient(92.89deg, #ff714d -9.4%, #ff4244 111.54%) !important;
+}
+
+ion-footer ion-item {
+  --inner-padding-end: 0 !important;
+}
+
+ion-footer ion-item p {
+  margin-left: 0;
+}
+
+ion-footer ion-item p ion-icon {
+  font-size: 32px;
+  margin: 0 5px;
+  color: var(--ion-color-lighter);
+}
+
+ion-footer ion-item p .playIcon {
+  font-size: 36px;
+}
+
+ion-footer img {
+  width: 100%;
+  height: 70px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+ion-footer .rangebarTime {
+  margin: -1em 0 0 0;
+}
+
+ion-footer ion-range {
+  padding: 0 0 0 5px;
+  margin-top: -1em;
+  --bar-background: var(--ion-color-lighter) !important;
+  --bar-background-active: var(--ion-color-tertiary) !important;
+}
+/*# sourceMappingURL=tab5.page.css.map */

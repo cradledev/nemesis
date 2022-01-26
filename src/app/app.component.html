@@ -1,0 +1,36 @@
+<ion-app>
+    <ion-split-pane contentId="main-content">
+        <ion-menu contentId="main-content" type="overlay">
+            <ion-content class="bgGradient">
+                <ion-list class="bg-none mt-3" id="inbox-list">
+                    <ion-menu-toggle (click)="toProfile()" style="display: block;" auto-hide="false" class="profileInfo ion-text-center">
+                        <img [src]="this.user.profileUrl || './assets/imgs/user3.png'" class="profileImg">
+                        <ion-item class="bg-none" lines="none">
+                            <ion-label class="ion-text-center">
+                                <h5 style="text-transform: none;" class="white">{{this.user.fullName}}</h5>
+                                <p style="text-transform: none;" class="white">{{this.user.email}}</p>
+                            </ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+
+                    <div class="ion-padding">
+                        <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+                            <ion-item class="rounded mb-1" (click)="toSelect(i)" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
+                                <img slot="start" *ngIf="p.icon" [src]="p.icon">
+                                <ion-icon slot="start" *ngIf="p.img" color="primary" [name]="p.img"></ion-icon>
+                                <ion-label>
+                                    <h5>{{ p.title }}</h5>
+                                </ion-label>
+                            </ion-item>
+
+
+                        </ion-menu-toggle>
+
+                    </div>
+                </ion-list>
+
+            </ion-content>
+        </ion-menu>
+        <ion-router-outlet id="main-content"></ion-router-outlet>
+    </ion-split-pane>
+</ion-app>

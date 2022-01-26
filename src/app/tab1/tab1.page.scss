@@ -1,0 +1,108 @@
+ion-header {
+    .segmentBtns {
+        padding: 0 10px 10px 10px;
+        ion-button {
+            &.inactiveTab {
+                --background: rgba(255, 255, 255, 0.2) !important;
+                --box-shadow: none;
+            }
+            img {
+                filter: brightness(100);
+            }
+            &.activeTab {
+                --background: #ffffff !important;
+                color: var(--ion-color-primary) !important;
+                img {
+                    filter: brightness(1);
+                }
+            }
+        }
+        .leftBtn img {
+            margin-right: 8px;
+        }
+        .rightBtn img {
+            margin-left: 8px;
+        }
+    }
+}
+
+.loadingItem {
+    border: 1px solid #d3d3d3;
+    width: 100%;
+    opacity: 0.5;
+}
+
+ion-slides {
+    height: 100%;
+}
+
+.sign-up-button {
+    white-space: normal;
+}
+
+.createPostSheet {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    background: rgba(0, 0, 0, 0.5);
+    .innerContent {
+        border-radius: 16px 16px 0 0;
+        position: absolute;
+        width: 100%;
+        border: 1px solid var(--ion-color-primary);
+        bottom: 0;
+        .closeBar {
+            border-radius: 10px;
+            background: #e4e4e7;
+            border-radius: 10px;
+            color: #e4e4e7;
+            padding: 0 20px;
+            font-size: 4px;
+        }
+        ion-item {
+            img {
+                margin-right: 12px;
+            }
+        }
+    }
+}
+
+.imgPost {
+    width: 75px !important;
+    height: 75px !important;
+    object-fit: contain !important;
+}
+
+.crossIcon {
+    position: absolute;
+    z-index: 9999;
+    top: 15px;
+    right: 6px;
+    color: red;
+}
+
+.comments {
+    border-radius: 30px !important;
+    border: 2px solid #f1f1f1 !important;
+    .slotedStart {
+        margin-right: 10px !important;
+    }
+    .slotedEnd {
+        margin-left: 10px !important;
+    }
+}
+
+ion-avatar {
+    padding: 2px;
+    margin-right: 6px;
+    border: 1px solid var(--ion-color-primary);
+}
+
+.postImage {
+    width: 50px !important;
+    height: 50px !important;
+    object-fit: cover!important;
+    border-radius: 50%;
+}

@@ -1,0 +1,255 @@
+ion-header ion-toolbar {
+  --min-height: 65px;
+  --border-width: 0px;
+}
+
+ion-header ion-toolbar ion-title {
+  font-size: 21px;
+  font-weight: normal;
+}
+
+ion-content {
+  --padding-top: 20px;
+  --padding-bottom: 30px;
+}
+
+ion-content .filePickerCont {
+  height: 180px;
+  border: 1px solid #06123215;
+  border-radius: 10px;
+  background: #F8F8F8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+ion-content .filePickerCont .txt {
+  width: 95%;
+  margin: 0px auto;
+}
+
+ion-content .filePickerCont .txt .fileDesp {
+  font-size: 14px;
+  margin: 0px 0px 20px 0px;
+}
+
+ion-content .filePickerCont.colPicker {
+  height: 130px;
+  margin-bottom: 0px;
+}
+
+ion-content .filePickerCont.colPicker .txt ion-icon {
+  font-size: 28px;
+  margin-bottom: 2px;
+  color: black;
+}
+
+ion-content .filePickerCont.colPicker .txt .desp {
+  font-size: 12px;
+  margin: 7px 0px 0px 0px;
+}
+
+ion-content .createBtn {
+  height: 53px;
+  margin: 0px;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: normal !important;
+  --ion-color-base: #ffeded !important;
+  --ion-color-contrast: var(--ion-color-primary) !important;
+  --ion-color-shade: #ffeded !important;
+  --box-shadow: none !important;
+  width: 180px;
+}
+
+ion-content .toggleCont {
+  --inner-padding-end: 0px;
+  --min-height: 48px;
+  --background: transparent;
+  margin-top: 20px;
+}
+
+ion-content .toggleCont ion-label {
+  margin: 0px;
+}
+
+ion-content .toggleCont ion-label p {
+  margin: 0px;
+}
+
+ion-content .toggleCont ion-label p:first-child {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  padding-bottom: 7px;
+}
+
+ion-content .toggleCont ion-label p:last-child {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+ion-content .toggleCont ion-toggle {
+  padding: 0px 6px;
+}
+
+ion-content .inputTitle {
+  font-size: 16px;
+  margin: 20px 0px 13px 0px;
+  color: black;
+}
+
+ion-content .inputDesp {
+  font-size: 14px;
+  padding-bottom: 6px;
+}
+
+ion-content .inputCont {
+  --padding-start: 15px;
+  --padding-end: 15px;
+  --inner-padding-end: 0px;
+  --min-height: 55px;
+  border-radius: 7px;
+  --border-radius: 7px;
+  --background: #F8F8F8;
+  border: 1px solid #06123215;
+}
+
+ion-content .inputCont ion-input {
+  --padding-end: 0px;
+  --padding-start: 0px;
+  font-size: 15px;
+  --color: #061232;
+  --placeholder-opacity: 0.7;
+}
+
+ion-content .inputCont .unit {
+  margin: 0px 0px 0px 8px;
+  font-size: 15px;
+  color: #06123280;
+}
+
+ion-footer ion-toolbar {
+  --background: var(--ion-color-light) !important;
+  --border-width: 0px;
+  --padding-bottom: 25px;
+}
+
+ion-footer ion-toolbar .submitBtn {
+  height: 57px;
+  border-radius: 10px;
+  --border-radius: 10px;
+  font-size: 16px;
+  letter-spacing: normal !important;
+  margin: 0px;
+  --box-shadow: none !important;
+}
+
+.popupModal {
+  padding: 0% 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.popupModal .innerDiv {
+  width: 100%;
+  height: auto;
+  min-height: 50%;
+  padding-bottom: 40px !important;
+}
+
+.popupModal .innerDiv .heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 0px 0px 0px;
+}
+
+.popupModal .innerDiv .heading ion-icon {
+  color: var(--ion-color-medium);
+  font-size: 28px;
+}
+
+.popupModal .innerDiv .checkBoxCont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 30px;
+}
+
+.popupModal .innerDiv .checkBoxCont .checkbox {
+  height: 45px;
+  width: 45px;
+  min-width: 45px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background: #8d8d8d77;
+}
+
+.popupModal .innerDiv .checkBoxCont .checkbox img {
+  height: 35px;
+}
+
+.popupModal .innerDiv .checkBoxCont .checkbox.checked {
+  background: var(--ion-color-primary);
+}
+
+.popupModal .innerDiv .checkBoxCont .details {
+  padding-left: 18px;
+}
+
+.popupModal .innerDiv .checkBoxCont .details p {
+  color: var(--ion-color-medium);
+  font-size: 14px;
+  margin: 7px 0px 0px 0px;
+}
+
+.popupModal .innerDiv .uploadBtn {
+  height: 55px;
+  border-radius: 10px;
+  --border-radius: 10px;
+  margin: 20px 0px 0px 0px;
+  --box-shadow: none !important;
+  letter-spacing: normal !important;
+  font-size: 17px;
+}
+
+.popupModal .innerDiv .uploadBtn.disabled {
+  --ion-color-base: #8d8d8d77 !important;
+  --ion-color-shade: #8d8d8d77 !important;
+}
+/*# sourceMappingURL=create-multiple-nft.page.css.map */

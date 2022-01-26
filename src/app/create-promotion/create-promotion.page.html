@@ -1,0 +1,90 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>create promotion</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-slides [options]="slideOpts" class="mt-1">
+        <ion-slide>
+            <ion-row>
+                <ion-col class="anItem" size="12">
+                    <img src="./assets/imgs/gallery.png">
+                </ion-col>
+            </ion-row>
+        </ion-slide>
+        <ion-slide>
+            <ion-row>
+                <ion-col class="anItem" size="12">
+                    <img src="./assets/imgs/gallery.png">
+                </ion-col>
+            </ion-row>
+        </ion-slide>
+        <ion-slide>
+            <ion-row>
+                <ion-col class="anItem" size="12">
+                    <img src="./assets/imgs/gallery.png">
+                </ion-col>
+            </ion-row>
+        </ion-slide>
+        <ion-slide>
+            <ion-row>
+                <ion-col class="anItem" size="12">
+                    <img src="./assets/imgs/gallery.png">
+                </ion-col>
+            </ion-row>
+        </ion-slide>
+        <ion-slide>
+            <ion-row>
+                <ion-col class="anItem" size="12">
+                    <img src="./assets/imgs/gallery.png">
+                </ion-col>
+            </ion-row>
+        </ion-slide>
+    </ion-slides>
+
+    <div class="newsFeedPost bg-white rounded mt-2 ion-padding">
+        <ion-item class="rounded" lines="none">
+            <ion-avatar slot="start">
+                <img src="./assets/imgs/user3.png">
+            </ion-avatar>
+            <ion-label>
+                <h5 class="dark">John <small class="gray"><img style="margin: 0px 2px -3px 3px;" src="../../assets/imgs/correct 1.png"><span style="margin-left: 5px;">Posted a text</span></small>
+                </h5>
+                <p>Jan 27,2020 at 9:20 AM</p>
+            </ion-label>
+            <ion-icon name="chevron-down" slot="end" color="primary"></ion-icon>
+        </ion-item>
+        <div>
+            <img class="w-100" src="../../assets/imgs/post1.png" style="height: 100%;">
+        </div>
+        <ion-item lines="none">
+            <ion-label class="ion-text-wrap mb-0">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquid corrupti reiciendis quo qui iste error libero molestias voluptatem alias, sapiente, laboriosam, tenetur itaque ratione voluptates atque. Eum, cumque explicabo.</p>
+            </ion-label>
+        </ion-item>
+        <ion-item lines="none" style="margin-left: 14px !important;">
+            <ion-label>
+                <p>128 Likes</p>
+            </ion-label>
+            <ion-label>
+                <p>320 Dislikes</p>
+            </ion-label>
+            <ion-label>
+                <p>300 Comments</p>
+            </ion-label>
+            <ion-label>
+                <p> Comments</p>
+            </ion-label>
+        </ion-item>
+        <hr />
+
+
+    </div>
+</ion-content>
+<ion-footer class="ion-padding">
+    <ion-button routerLink="/create-promotion" expand="block" class="h-50 rounded boxshadow">Next</ion-button>
+</ion-footer>

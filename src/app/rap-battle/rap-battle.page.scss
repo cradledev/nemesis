@@ -1,0 +1,55 @@
+ion-header {
+    background: transparent !important;
+    position: absolute;
+    width: 100%ٖ;
+}
+
+ion-content {
+    .upperDiv,
+    .bottomDiv {
+        height: 50vh;
+        position: relative;
+        p {
+            font-size: 14px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .floatingImgs {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 10px;
+            position: absolute;
+            z-index: 999;
+            left: 1em;
+        }
+    }
+
+    .upperDiv {
+        .leftTop {
+            bottom: 5em;
+        }
+        .leftBottom {
+            bottom: 1em;
+        }
+    }
+
+    .bottomDiv {
+        .leftTop {
+            top: 1em;
+        }
+        .leftBottom {
+            top: 5em;
+        }
+    }
+
+    .userInfo {
+        position: absolute;
+        z-index: 999;
+        width: 100%;
+        bottom: 1.5em;
+    }
+}

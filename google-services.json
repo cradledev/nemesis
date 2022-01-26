@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "35811702656",
+    "firebase_url": "https://nemesis-d3a6e.firebaseio.com",
+    "project_id": "nemesis-d3a6e",
+    "storage_bucket": "nemesis-d3a6e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:35811702656:android:a2c0ec0de1f3534e06b365",
+        "android_client_info": {
+          "package_name": "com.nemesis.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "35811702656-mmfmnj88ovk7bescighu3frunm9cn4c1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOrCqRSGUUqXho7IdvqPVroVUkIejnxn8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "35811702656-mmfmnj88ovk7bescighu3frunm9cn4c1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "35811702656-pk3idlnq38p4t45duve26i0let4c1ruf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nemesis.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

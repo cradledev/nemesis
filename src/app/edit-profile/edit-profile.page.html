@@ -1,0 +1,90 @@
+<ion-header class="gradientHeader">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>edit profile</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+    <div class="ion-text-center">
+        <img [src]="this.userObj.profileUrl || './assets/imgs/user3.png'" (click)="pictureClick()" class="profileImg">
+        <ion-icon name="create" class="editIcon"></ion-icon>
+    </div>
+
+
+
+    <h5 class="dark mt-1 mb-1">Account Information:</h5>
+
+    <ion-item lines="none" class="bg-simple rounded mb-1">
+        <ion-label class="dark" position="stacked">User Name:</ion-label>
+        <ion-input [(ngModel)]="userObj.fullName" class="dark" type="text" placeholder="User Name"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="bg-simple rounded mb-1">
+        <ion-label class="dark" position="stacked">Email:</ion-label>
+        <ion-input [(ngModel)]="userObj.email" class="dark" disabled type="text" placeholder="Email"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="bg-simple rounded mb-1">
+        <ion-label class="dark" position="stacked">Phone:</ion-label>
+        <ion-input [(ngModel)]="userObj.phone" class="dark" type="tel" placeholder="Phone"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="bg-simple rounded mb-1">
+        <ion-label class="dark" position="stacked">City:</ion-label>
+        <ion-input [(ngModel)]="userObj.city" class="dark" type="text" placeholder="City"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="bg-simple rounded mb-1">
+        <ion-label class="dark" position="stacked">Country:</ion-label>
+        <ion-input [(ngModel)]="userObj.country" class="dark" type="text" placeholder="Country"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="bg-simple rounded mb-1">
+        <ion-label class="dark" position="stacked">Bio:</ion-label>
+        <ion-textarea class="dark" [(ngModel)]="userObj.bio" type="text" placeholder="Bio">
+        </ion-textarea>
+    </ion-item>
+
+    <h5 class="dark mt-1 mb-1">Basic Information:</h5>
+
+    <ion-item lines="none" class="bg-simple rounded mb-1">
+
+        <ion-label class="dark" position="stacked">Gender:</ion-label>
+        <ion-input [(ngModel)]="userObj.gender" class="dark" type="text" placeholder="Gender"></ion-input>
+        <!-- <ion-select [(ngModel)]="userObj.gender" class="dark" interface="popover">
+            <ion-select-option selected>Male</ion-select-option>
+            <ion-select-option>Female</ion-select-option>
+            <ion-select-option>Other</ion-select-option>
+        </ion-select> -->
+    </ion-item>
+
+    <ion-item lines="none" class="bg-simple rounded mb-1">
+        <ion-label class="dark" position="stacked">Date of birth:</ion-label>
+        <ion-input [(ngModel)]="userObj.dob" class="dark" type="date" placeholder="Date of birth"></ion-input>
+        <!-- <ion-datetime [(ngModel)]="userObj.dob" class="dark" placeholder="Date of birth" [max]="maxYear"></ion-datetime> -->
+    </ion-item>
+
+
+
+    <ion-button (click)="updateProfile()" expand="block" color="secondary" class="ion-no-margin h-50">Save Profile
+    </ion-button>
+    <div class="mt-2">
+        <ion-item>
+            <ion-icon slot="start" name="location-outline"></ion-icon>
+            <ion-label>Turn off city display</ion-label>
+            <ion-toggle slot="end" name="blueberry" checked></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+            <ion-icon slot="start" name="chatbubble-outline"></ion-icon>
+            <ion-label>Turn off Comment</ion-label>
+            <ion-toggle slot="end" name="blueberry" checked></ion-toggle>
+        </ion-item>
+    </div>
+
+
+</ion-content>

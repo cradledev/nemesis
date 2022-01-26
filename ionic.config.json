@@ -1,0 +1,8 @@
+{
+  "name": "viral-app",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

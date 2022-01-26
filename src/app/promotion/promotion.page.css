@@ -1,0 +1,37 @@
+ion-header .segmentBtns {
+  padding: 0 10px 10px 10px;
+}
+
+ion-header .segmentBtns ion-button.inactiveTab {
+  --background: rgba(255, 255, 255, 0.2) !important;
+  --box-shadow: none;
+}
+
+ion-header .segmentBtns ion-button img {
+  -webkit-filter: brightness(100);
+          filter: brightness(100);
+}
+
+ion-header .segmentBtns ion-button.activeTab {
+  --background: #ffffff !important;
+  color: var(--ion-color-primary) !important;
+}
+
+ion-header .segmentBtns ion-button.activeTab img {
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+}
+
+ion-header .segmentBtns .leftBtn img {
+  margin-right: 8px;
+}
+
+ion-header .segmentBtns .rightBtn img {
+  margin-left: 8px;
+}
+
+.anItem {
+  border-radius: 20px;
+  padding: 10px 5px 10px 5px;
+}
+/*# sourceMappingURL=promotion.page.css.map */
